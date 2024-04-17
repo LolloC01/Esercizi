@@ -58,3 +58,5 @@ for i in range(len(names)):
 #Use your list to print a series of statements about these items, such as “I would like to own a Honda motorcycle.”
 
 cars: list = ["Alfa Romeo", "FIAT", "BMW", "Ferrari"]
+message = f"I would like to own an {cars[0]}"
+print(message)

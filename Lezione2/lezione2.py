@@ -271,23 +271,23 @@ for i in range(len(pets)):
 #To make this exercise a bit more interesting, ask some friends to name a few of their favorite places. 
 #Loop through the dictionary, and print each person’s name and their favorite places.
 
-favorite_places: dict = {"Lorenzo" : "Roma",
-                         "Lorenzo" : "Miami",
-                         "Massimo" : "Torino",
-                         "Giuseppe" : "Sabaudia",
-                         "Valeria" : "Ancona",
-                         "Valeria" : "Pescara",
-                         "Lorenzo" : "Pescara",}
-
+favorite_places: dict = {"Lorenzo" : ["roma", "parigi", "milano"],
+                         "Massimo" : ["Miami", "Torino", "milano"],
+                         "Giuseppe" : ["roma", "Ancona", "Pescara"]}
 for k in favorite_places:
-        message = f"{k}: \t {favorite_places[k]}"
-        print(message)
-
+    print(f"{k}:")
+    for i in range(len(favorite_places[k])):
+        print(f"\t{favorite_places[k][i]}")
 
 #6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. 
 #Then print each person’s name along with their favorite numbers.
 
-
+fav_num = dict(Luca = [2,123], Luigi = [10,213], Matteo = [5,1,2,3,4,3], Francesca = [20,346,7], Bruno = [9])
+for k in fav_num.keys():
+    message: str = f"I numeri preferiti di {k} sono:"
+    print(message)
+    for i in range(len(fav_num[k])):
+        print(f"\t\t{fav_num[k][i]}")
 
 
 #6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. 

@@ -225,13 +225,97 @@ for k in glossary.keys():
     message: str = f"{k} \t {glossary[k]}"
     print(message)
  
-#6-7. People: Start with the program you wrote for Exercise 6-1. Make two new dictionaries representing different people, and store all three dictionaries in a list called people. Loop through your list of people. As you loop through the list, print everything you know about each person.
+#6-7. People: Start with the program you wrote for Exercise 6-1. 
+#Make two new dictionaries representing different people, and store all three dictionaries in a list called people. 
+#Loop through your list of people. As you loop through the list, print everything you know about each person.
+person = dict(name1 = "Lorenzo", 
+              surname = "Colitto", 
+              age = 22, 
+              city = "Roma")
+person1 = dict(name1 = "Leonardo", 
+               surname = "Brussani", 
+               age = 19, 
+               city = "Roma")
+person2 = dict(name1 = "Luca", 
+               surname = "Rossi", 
+               age = 43, 
+               city = "Frosinone")
 
-#6-8. Pets: Make several dictionaries, where each dictionary represents a different pet. In each dictionary, include the kind of animal and the owner’s name. Store these dictionaries in a list called pets. Next, loop through your list and as
-#you do, print everything you know about each pet. 
+people: list = [person, person1, person2]
+for i in range(len(people)):
+    for k in people[i]:
+        message = f"{k}: \t {people[i][k]}"
+        print(message)
 
-#6-9. Favorite Places: Make a dictionary called favorite_places. Think of three names to use as keys in the dictionary, and store one to three favorite places for each person. To make this exercise a bit more interesting, ask some friends to name a few of their favorite places. Loop through the dictionary, and print each person’s name and their favorite places.
-#6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. Then print each person’s name along with their favorite numbers.
-#6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
+#6-8. Pets: Make several dictionaries, where each dictionary represents a different pet. 
+#In each dictionary, include the kind of animal and the owner’s name. 
+#Store these dictionaries in a list called pets. Next, loop through your list and as you do, print everything you know about each pet. 
+pippo: dict = {"type" : "Border collie",
+               "owner" : "Luca"}
+ciccio: dict = {"type" : "Gatto",
+               "owner" : "Andrea"}
+topolino: dict = {"type" : "Pantegana",
+               "owner" : "Angelo"}
+paperina: dict = {"type" : "Gallina",
+               "owner" : "Giuseppe"}
+pluto: dict = {"type" : "Labrador",
+               "owner" : "Alice"}
+pets: list = [pippo, pluto, paperina, topolino, ciccio]
+for i in range(len(pets)):
+    for k in pets[i]:
+        message = f"{k}: \t {pets[i][k]}"
+        print(message)
 
-#6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, or improving the formatting of the output.
+#6-9. Favorite Places: Make a dictionary called favorite_places. 
+#Think of three names to use as keys in the dictionary, and store one to three favorite places for each person. 
+#To make this exercise a bit more interesting, ask some friends to name a few of their favorite places. 
+#Loop through the dictionary, and print each person’s name and their favorite places.
+
+favorite_places: dict = {"Lorenzo" : "Roma",
+                         "Lorenzo" : "Miami",
+                         "Massimo" : "Torino",
+                         "Giuseppe" : "Sabaudia",
+                         "Valeria" : "Ancona",
+                         "Valeria" : "Pescara",
+                         "Lorenzo" : "Pescara",}
+
+for k in favorite_places:
+        message = f"{k}: \t {favorite_places[k]}"
+        print(message)
+
+
+#6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. 
+#Then print each person’s name along with their favorite numbers.
+
+
+
+
+#6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. 
+#Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. 
+#The keys for each city’s dictionary should be something like country, population, and fact. 
+#Print the name of each city and all of the information you have stored about it.
+
+Roma: dict = {"country" : "Italy",
+            "population" : "2,873 millions",
+            "fact" : "Bad public transport"}
+Parigi: dict = {"country" : "France",
+                "population" : "2,161 millions",
+                "fact" : "Known as the city of love"}
+Monaco: dict = {"country" : "Germany", 
+                "population" : "8982 millions",
+                "fact" : "They just get out fom"}
+     
+cities: dict = {"Roma" : Roma, "Parigi" : Parigi, "Monaco" : Monaco}  
+for i in cities:
+    print(i)
+    for k in cities[i]:
+        message = f"{k}: \t {cities[i][k]}"
+        print(message)
+
+
+
+#6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
+#Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, 
+#or improving the formatting of the output.
+
+

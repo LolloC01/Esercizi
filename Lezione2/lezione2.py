@@ -8,7 +8,11 @@ es = 1
 
 while es != 0:
     print("Che esercizio vuoi eseguire?")
-    es: float = float(input("inserisci l'esercizio"))
+    print("2.3 - 2.4 - 2.5 - 2.6 -2.8")
+    print("3.1 - 3.2 - 3.3 - 3.4 - 3.5 - 3.6 - 3.7 - 3.8 - 3.9 - 3.10")
+    print("6.1 - 6.2 - 6.3 - 6.4 - 6.8 - 6.9 - 6.10 - 6.11 - 6.12")
+    print("Inserisci 0 per uscire")
+    es: float = float(input("inserisci l'esercizio: \n"))
     if es == 2.3:
         #2-3. Personal Message: Use a variable to represent a person’s name, and print a message to that person. 
         #Your message should be simple, such as, “Hello Eric, would you like to learn some Python today?”

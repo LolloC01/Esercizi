@@ -336,5 +336,3 @@ while es != 0:
         pass
     elif es == 0:
         quit()    
-    print("Che esercizio vuoi eseguire?")
-    es = float(input("inserisci l'esercizio"))

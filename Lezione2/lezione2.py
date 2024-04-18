@@ -209,14 +209,22 @@ for k in fav_num.keys():
     message: str = f"Il numero preferito di {k} è {fav_num[k]}"
     print(message)
 
+#6-3. Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
+#• Think of five programming words you’ve learned about in the previous chapters. 
+#Use these words as the keys in your glossary, and store their meanings as values.
+#• Print each word and its meaning as neatly formatted output. 
+#You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. 
+#Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.
 
-
-
-
-#6-3. Glossary: A Python wwwwwwwwwwwwwwwwwwwwwwdictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
-#• Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
-#• Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.
-
+glossary: dict = {"list" : "lista: insieme di valori eterogenei modificabili e indicizzati",
+                  "dict" : "dizionario: insieme di valori indicizzati grazie a una chiave associata a ogni valore",
+                  "set" : "insieme: insieme di valori che non possono ripetersi",
+                  "tuple" : "tuple: insieme di valori non modificabili"}
+print(glossary)
+for k in glossary.keys():
+    message: str = f"{k} \t {glossary[k]}"
+    print(message)
+ 
 #6-7. People: Start with the program you wrote for Exercise 6-1. Make two new dictionaries representing different people, and store all three dictionaries in a list called people. Loop through your list of people. As you loop through the list, print everything you know about each person.
 
 #6-8. Pets: Make several dictionaries, where each dictionary represents a different pet. In each dictionary, include the kind of animal and the owner’s name. Store these dictionaries in a list called pets. Next, loop through your list and as

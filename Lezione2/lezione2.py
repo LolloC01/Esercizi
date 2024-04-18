@@ -199,8 +199,21 @@ city : str = person["city"]
 message: str = f"Ciao, sono {name} {surname}, ho {age} anni e sono nato a {city}"
 print (message)
 
-#6-2. Favorite Numbers: Use a dictionary to store people’s favorite numbers. Think of five names, and use them as keys in your dictionary. Think of a favorite number for each person, and store each as a value in your dictionary. Print each person’s name and their favorite number. For even more fun, poll a few friends and get some actual data for your program.
-#6-3. Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
+#6-2. Favorite Numbers: Use a dictionary to store people’s favorite numbers. 
+#Think of five names, and use them as keys in your dictionary. 
+#Think of a favorite number for each person, and store each as a value in your dictionary. 
+#Print each person’s name and their favorite number. For even more fun, poll a few friends and get some actual data for your program.
+
+fav_num = dict(Luca = 2, Luigi = 10, Matteo = 5, Francesca = 20, Bruno = 9)
+for k in fav_num.keys():
+    message: str = f"Il numero preferito di {k} è {fav_num[k]}"
+    print(message)
+
+
+
+
+
+#6-3. Glossary: A Python wwwwwwwwwwwwwwwwwwwwwwdictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
 #• Think of five programming words you’ve learned about in the previous chapters. Use these words as the keys in your glossary, and store their meanings as values.
 #• Print each word and its meaning as neatly formatted output. You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.
 

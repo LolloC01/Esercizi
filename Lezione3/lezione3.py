@@ -220,13 +220,26 @@ while es != 0:
 #• Write one version of this program that passes the if test and another that fails. (The version that fails will have no output.)
 #
 
-    elif es == 5.3
+    elif es == 5.3:
+        color: str = input("inerisci un colore tra green, rede yellow: ")
+        if color == "green":
+            print("you just earn 5 points")
+        elif color == "red":
+            pass
+        elif color == "yellow":
+            pass
 
 #
 #5-4. Alien Colors #2: Choose a color for an alien as you did in Exercise 5-3, and write an if-else chain.
 #• If the alien’s color is green, print a statement that the player just earned 5 points for shooting the alien.
 #• If the alien’s color isn’t green, print a statement that the player just earned 10 points.
 #• Write one version of this program that runs the if block and another that runs the else block.
+    elif es == 5.4:
+        color: str = input("inerisci un colore tra green, rede yellow: ")
+        if color == "green":
+            print("you just earn 5 points")
+        else:
+            print("You just earned 10 points")
 #
 #5-5. Alien Colors #3: Turn your if-else chain from Exercise 5-4 into an if-elif-else chain.
 #
@@ -234,6 +247,14 @@ while es != 0:
 #• If the alien is yellow, print a message that the player earned 10 points.
 #• If the alien is red, print a message that the player earned 15 points.
 #• Write three versions of this program, making sure each message is printed for the appropriate color alien.
+    elif es == 5.5:
+        color: str = input("inerisci un colore tra green, rede yellow: ")
+        if color == "green":
+            print("you just earn 5 points")
+        elif color == "red":
+            print("you just earn 10 points")
+        elif color == "yellow":
+            print("you just earn 15 points")
 #
 #
 #5-6. Stages of Life: Write an if-elif-else chain that determines a person’s stage of life. Set a value for the variable age, and then:

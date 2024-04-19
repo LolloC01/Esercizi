@@ -3,8 +3,8 @@
 es = 1
 while es != 0:
     print("Che esercizio vuoi eseguire?")
-    print("4.1 - 4.2 - 4.3 - 4.4 - 4.5 - 4.6 - 4.7 - 4.8 - 4.9 - 4.10 - 4.11 - 4.12 - 4.14 - 4.15")
-    print("5.1 - 5.2 - 5.3 - 5.4 - 5.5 - 5.6 - 5.7 - 5.8 - 5.9 - 5.10 - 5.11")
+    print("4.1 - 4.2 - 4.3 - 4.4 - 4.5 - 4.6 - 4.7 - 4.8 - 4.9 - 4.101 - 4.11 - 4.12 - 4.14 - 4.15")
+    print("5.1 - 5.2 - 5.3 - 5.4 - 5.5 - 5.6 - 5.7 - 5.8 - 5.9 - 5.101 - 5.11")
     print("Inserisci 0 per uscire")
     es: float = float(input("inserisci l'esercizio: \n"))
 
@@ -47,8 +47,8 @@ while es != 0:
         n: list = []
         for i in range(1, 1000001):
             n.append(i)
-        for i in range(len(n)):
-            print(n[i])
+        for i in n:
+            print(i)
 
 #4-5. Summing a Million: Make a list of the numbers from one to one million, 
 #and then use min() and max() to make sure your list actually starts at one and ends at one million. 
@@ -98,9 +98,8 @@ while es != 0:
 #4-9. Cube Comprehension: Use a list comprehension to generate a list of the first 10 cubes.
 
     elif es == 4.9:
-         cube: list = [1,2,3,4,5,6,7,8,9,10]
-         newlist = [cube**3 for item in newlist]
-         for i in newlist:
+         cube = [x**3 for x in range(1,11)]
+         for i in cube:
              print(i)
 
 #
@@ -109,6 +108,15 @@ while es != 0:
 #• Print the message Three items from the middle of the list are:. Then use a slice to print three items from the middle of the list.
 #• Print the message The last three items in the list are:. Then use a slice to print the last three items in the list.
 
+    elif es == 4.101:
+        cube: list = [1,2,3,4,5,6,7,8,9,10]
+        message: str = f"First three items: {cube[:3]}"
+        print(message)
+        x: int = int(len(cube)/2)
+        message: str = f"middle three items: {cube[x-1:x+2]}"
+        print(message)
+        message: str = f"Last three items: {cube[-3:]}"
+        print(message)
 
 
 #4-11. My Pizzas, Your Pizzas: Start with your program from Exercise 4-1. Make a copy of the list of pizzas, and call it friend_pizzas. Then, do the following:
@@ -117,7 +125,21 @@ while es != 0:
 #• Prove that you have two separate lists. Print the message My favorite pizzas are:, and then use a for loop to print the first list. 
 #Print the message My friend’s favorite pizzas are:, and then use a for loop to print the second list. 
 #Make sure each new pizza is stored in the appropriate list.
-#
+
+    elif es == 4.11:
+        pizza: list = ["Margherita", "Capricciosa", "Funghi e salsiccia"]
+        pizza.append("Bufala e pachino")
+        friend_pizza: list = [x for x in pizza]
+        friend_pizza.append("patate e salsiccia")
+        print("My favourite pizzas are:")
+        for i in pizza:
+            print(i)
+        print("My friend favourite pizzas are:")
+        for i in friend_pizza:
+            print(i)
+
+
+
 #4-12. More Loops: All versions of foods.py in this section have avoided using for loops when printing, to save space. 
 #Choose a version of foods.py, and write two for loops to print each list of foods.
 #

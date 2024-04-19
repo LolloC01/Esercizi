@@ -98,15 +98,19 @@ while es != 0:
 #4-9. Cube Comprehension: Use a list comprehension to generate a list of the first 10 cubes.
 
     elif es == 4.9:
-        cube: list == [cube.append(i**3) for i in range(1,11) if True]
+         cube: list = [1,2,3,4,5,6,7,8,9,10]
+         newlist = [cube**3 for item in newlist]
+         for i in newlist:
+             print(i)
 
 #
 #4-10. Slices: Using one of the programs you wrote in this chapter, add several lines to the end of the program that do the following:
 #• Print the message The first three items in the list are:. Then use a slice to print the first three items from that program’s list.
 #• Print the message Three items from the middle of the list are:. Then use a slice to print three items from the middle of the list.
 #• Print the message The last three items in the list are:. Then use a slice to print the last three items in the list.
-#
-#
+
+
+
 #4-11. My Pizzas, Your Pizzas: Start with your program from Exercise 4-1. Make a copy of the list of pizzas, and call it friend_pizzas. Then, do the following:
 #• Add a new pizza to the original list.
 #• Add a different pizza to the list friend_pizzas.

@@ -137,17 +137,8 @@ while es != 0:
         print("My friend favourite pizzas are:")
         for i in friend_pizza:
             print(i)
-
-
-
-#4-12. More Loops: All versions of foods.py in this section have avoided using for loops when printing, to save space. 
-#Choose a version of foods.py, and write two for loops to print each list of foods.
-#
-#4-14. PEP 8: Look through the original PEP 8 style guide at https://python.org/dev/peps/pep-0008. 
-#You won’t use much of it now, but it might be interesting to skim through it.
-#
 #4-15. Code Review: Choose three of the programs you’ve written in this chapter and modify each one to comply with PEP 8.
-#
+###########################
 #5-1. Conditional Tests: Write a series of conditional tests. Print a statement
 #describing each test and your prediction for the results of each test. Your code
 #should look something like this:
@@ -160,20 +151,43 @@ while es != 0:
 #evaluates to True or False.
 #• Create at least 10 tests. Have at least 5 tests evaluate to True and another
 #5 tests evaluate to False.
-#
-#5-2. More Conditional Tests: You don’t have to limit the number of tests you cre-
-#ate to 10. If you want to try more comparisons, write more tests and add them
-#
-#to conditional_tests.py. Have at least one True and one False result for each of
-#the following:
+    elif es == 5.1:
+        car = 'subaru'
+        print("Is car == 'subaru'? I predict True.")
+        print(car == 'subaru')
+        print("\nIs car == 'audi'? I predict False.")
+        print(car == 'audi')
+        car = 'ferrari'
+        print("Is car == 'ferrari'? I predict True.")
+        print(car == 'ferrari')
+        print("\nIs car == 'mercedes'? I predict False.")
+        print(car == 'mercedes')
+        car = 'alfa romeo'
+        print("Is car == 'alfa romeo'? I predict True.")
+        print(car == 'alfa romeo')
+        print("\nIs car == 'bmw'? I predict False.")
+        print(car == 'bmw')
+        car = 'FIAT'
+        print("Is car == 'FIAT'? I predict True.")
+        print(car == 'FIAT')
+        print("\nIs car == 'audi'? I predict False.")
+        print(car == 'audi')
+        car = 'lamborghini'
+        print("Is car == 'lamborghini'? I predict True.")
+        print(car == 'lamborghini')
+        print("\nIs car == 'bugatti'? I predict False.")
+        print(car == 'bugatti')
+
+#5-2. More Conditional Tests: You don’t have to limit the number of tests you create to 10. 
+#If you want to try more comparisons, write more tests and add them to conditional_tests.py. 
+#Have at least one True and one False result for each of the following:
 #• Tests for equality and inequality with strings
 #• Tests using the lower() method
-#• Numerical tests involving equality and inequality, greater than and less
-#than, greater than or equal to, and less than or equal to
+#• Numerical tests involving equality and inequality, greater than and less than, greater than or equal to, and less than or equal to
 #• Tests using the and keyword and the or keyword
 #• Test whether an item is in a list
 #• Test whether an item is not in a list
-#
+
 #5-3. Alien Colors #1: Imagine an alien was just shot down in a game. Create a variable called alien_color and assign it a value of 'green', 'yellow', or 'red'.
 #• Write an if statement to test whether the alien’s color is green. If it is, print a message that the player just earned 5 points.
 #• Write one version of this program that passes the if test and another that fails. (The version that fails will have no output.)

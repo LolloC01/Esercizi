@@ -337,6 +337,18 @@ while es != 0:
         #6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. 
         #Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, 
         #or improving the formatting of the output.
-        pass
+        fav_num = dict(Luca = [], Luigi = [], Matteo = [], Francesca = [], Bruno = [])
+        for i in fav_num.keys():
+            n: list = []
+            x: int = int(input(f"Inserisci il numero di numeri preferiti di {i}: "))
+            while x != 0:
+                n.append(int(input("numero preferito: ")))
+                x -= 1
+            fav_num[i] = n
+        for k in fav_num.keys():
+            message: str = f"I numeri preferiti di {k} sono:"
+            print(message)
+            for i in range(len(fav_num[k])):
+                print(f"\t\t{fav_num[k][i]}")
     elif es == 0:
         quit()    

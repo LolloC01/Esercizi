@@ -187,11 +187,41 @@ while es != 0:
 #• Tests using the and keyword and the or keyword
 #• Test whether an item is in a list
 #• Test whether an item is not in a list
-
+    elif es == 5.2:
+        car: str = "FERRARI"
+        cars: list = ["audi", "bmw", "ferrari"]
+        print("is your car a audi?")
+        print(car == cars[1])
+        print("is your car a ferrari?")
+        print(car.lower() == cars[1])
+        n1: int = 123
+        n2: int = 54
+        print(f"{n1} è maggiore? di {n2}")
+        print(n1 > n2)
+        print(f"{n1} è minore? di {n2}")
+        print(n1 < n2)
+        print(f"{n1} è maggiore o uguale? di {n2}")
+        print(n1 >= n2)
+        print(f"{n1} è minore o uguale? di {n2}")
+        print(n1 <= n2)
+        print(f"{n1} è uguale a {n2}")
+        print(n1 == n2)
+        print("l'audi è nella lista?")
+        print("audi" in cars)
+        print("l'alfa romeo è nella lista?")
+        print("alfa romeo" in cars)
+        print("l'audi è fuori dalla lista?")
+        print("audi" not in cars)
+        print("l'alfa romeo è fuori dalla lista?")
+        print("alfa romeo" not in cars)
+        
 #5-3. Alien Colors #1: Imagine an alien was just shot down in a game. Create a variable called alien_color and assign it a value of 'green', 'yellow', or 'red'.
 #• Write an if statement to test whether the alien’s color is green. If it is, print a message that the player just earned 5 points.
 #• Write one version of this program that passes the if test and another that fails. (The version that fails will have no output.)
 #
+
+    elif es == 5.3
+
 #
 #5-4. Alien Colors #2: Choose a color for an alien as you did in Exercise 5-3, and write an if-else chain.
 #• If the alien’s color is green, print a statement that the player just earned 5 points for shooting the alien.

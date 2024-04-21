@@ -43,3 +43,6 @@ while es != 0:
     elif es == 8.8:
         artist: str = input("inserisci l'artista: ")
         artist: str = input("inserisci l'album: ")
+    elif es == 8.9:
+        message: list =["ciao", "Hello","Hola"]
+        lezione4.show_message(message) 

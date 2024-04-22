@@ -40,3 +40,6 @@ while es != 0:
         print(lezione4.make_album("Ultimo", "Peter Pan"))
         print(lezione4.make_album("Pignuini Tattici Nucleari", "Scooby Doo"))
         print(lezione4.make_album("Eminem", "Marshall Mother LP", 10))
+    elif es == 8.8:
+        artist: str = input("inserisci l'artista: ")
+        artist: str = input("inserisci l'album: ")

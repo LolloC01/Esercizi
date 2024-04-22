@@ -264,20 +264,56 @@ while es != 0:
 #• If the person is at least 13 years old but less than 20, print a message that the person is a teenager.
 #• If the person is at least 20 years old but less than 65, print a message that the person is an adult.
 #• If the person is age 65 or older, print a message that the person is an elder.
+
+    elif es == 5.5:
+        age: int = int(input("Insert the age you want to check: "))
+        if age < 2:
+            print("the person is a baby")
+        elif age == "red":
+            print("you just earn 10 points")
+        elif age == "yellow":
+            print("you just earn 15 points")
+
 #
 #5-7. Favorite Fruit: Make a list of your favorite fruits, and then write a series of independent if statements that check for certain fruits in your list.
 #• Make a list of your three favorite fruits and call it favorite_fruits.
 #• Write five if statements. Each should check whether a certain kind of fruit is in your list. If the fruit is in your list, the if block should print a statement, such as You really like Apples!
 #
-#5-8. Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user after they log in to a website. Loop through the list, and print a greeting to each user.
+#5-8. Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user 
+#after they log in to a website. Loop through the list, and print a greeting to each user.
 #• If the username is 'admin', print a special greeting, such as Hello admin, would you like to see a status report?
 #• Otherwise, print a generic greeting, such as Hello Jaden, thank you for logging in again.
 #
+
+    elif es == 5.8:
+        username: list = ["admin", "user1", "user2", "user3", "user4"]
+        for i in username:
+            if i == "admin":
+                message: str = f"Hello {i}, would you like to see a status report?"
+                print(message)
+            else:
+                message: str = f"Hello {i}"
+                print(message)
 #
 #5-9. No Users: Add an if test to hello_admin.py to make sure the list of users is not empty.
 #• If the list is empty, print the message We need to find some users!
 #• Remove all of the usernames from your list, and make sure the correct message is printed.
 #
+
+    elif es == 5.9:
+        username: list = []
+        
+        if len(username) == 0:
+            print("We need to find some users!")
+        else:
+            for i in username:
+                if i == "admin":
+                    message: str = f"Hello {i}, would you like to see a status report?"
+                    print(message)
+                else:
+                    message: str = f"Hello {i}"
+                    print(message)
+
 #5-10. Checking Usernames: Do the following to create a program that simulates how websites ensure that everyone has a unique username.
 #• Make a list of five or more usernames called current_users.
 #• Make another list of five usernames called new_users. Make sure one or two of the new usernames are also in the current_users list.

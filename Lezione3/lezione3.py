@@ -265,14 +265,20 @@ while es != 0:
 #• If the person is at least 20 years old but less than 65, print a message that the person is an adult.
 #• If the person is age 65 or older, print a message that the person is an elder.
 
-    elif es == 5.5:
+    elif es == 5.6:
         age: int = int(input("Insert the age you want to check: "))
         if age < 2:
             print("the person is a baby")
-        elif age == "red":
-            print("you just earn 10 points")
-        elif age == "yellow":
-            print("you just earn 15 points")
+        elif age < 4:
+            print("the person is a toddler")
+        elif age < 13:
+            print("the person is a kid")
+        elif age < 20:
+            print("the person is a teenager")
+        elif age < 65:
+            print("the person is an adult")
+        else:
+            print("the person is an elder")
 
 #
 #5-7. Favorite Fruit: Make a list of your favorite fruits, and then write a series of independent if statements that check for certain fruits in your list.

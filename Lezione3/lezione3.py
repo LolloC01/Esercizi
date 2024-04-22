@@ -286,6 +286,20 @@ while es != 0:
 #• Write five if statements. Each should check whether a certain kind of fruit is in your list. 
 #If the fruit is in your list, the if block should print a statement, such as You really like Apples!
 #
+
+    elif es == 5.7:
+        fav_fruit: list = ["mela", "pera", "banana", "pesca", "albicocca", "mango", "kiwi"]
+        if "mela" in fav_fruit:
+            print("La mela c'è")
+        if "kiwi" in fav_fruit:
+            print("il kiwi mi piace")
+        if "cocco" in fav_fruit:
+            print("viva il cocco")
+        if "mango" in fav_fruit:
+            print("Mi piace il mango")
+        if "fragola" not in fav_fruit:
+            print("non mi piace la fragola")
+
 #5-8. Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user 
 #after they log in to a website. Loop through the list, and print a greeting to each user.
 #• If the username is 'admin', print a special greeting, such as Hello admin, would you like to see a status report?

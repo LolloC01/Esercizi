@@ -137,7 +137,8 @@ while es != 0:
         print("My friend favourite pizzas are:")
         for i in friend_pizza:
             print(i)
-#4-15. Code Review: Choose three of the programs you’ve written in this chapter and modify each one to comply with PEP 8.
+
+
 ###########################
 #5-1. Conditional Tests: Write a series of conditional tests. Print a statement
 #describing each test and your prediction for the results of each test. Your code
@@ -340,13 +341,40 @@ while es != 0:
 
 #5-10. Checking Usernames: Do the following to create a program that simulates how websites ensure that everyone has a unique username.
 #• Make a list of five or more usernames called current_users.
-#• Make another list of five usernames called new_users. Make sure one or two of the new usernames are also in the current_users list.
-#• Loop through the new_users list to see if each new username has already been used. If it has, print a message that the person will need to enter a new username. If a username has not been used, print a message saying that the username is available.
-#• Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted. (To do this, you’ll need to make a copy of current_users containing the lowercase versions of all existing users.)
+#• Make another list of five usernames called new_users. 
+#      Make sure one or two of the new usernames are also in the current_users list.
+#• Loop through the new_users list to see if each new username has already been used. 
+#      If it has, print a message that the person will need to enter a new username. 
+#      If a username has not been used, print a message saying that the username is available.
+#• Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted. 
+#      (To do this, you’ll need to make a copy of current_users containing the lowercase versions of all existing users.)
 #
+
+    elif es == 5.101:
+        current_users: list = ["user", "admin", "guest", "John", "Jim"]
+        new_users: list = ["Jake", "Luca", "lorenzo", "UsEr", "Kim"]
+        current_lower: list = []
+        for x in current_users:
+            current_lower.append(x.lower())
+        for i in range(len(new_users)):
+            print(new_users[i])
+            used: bool = True
+            while used:
+                if new_users[i].lower() in current_lower:
+                    print("USERNAME GIA USATO, INSERIRNE UN ALTRO")
+                    new_users[i] = input("Inserisci un nuovo username: ")
+                    used = True
+                else:
+                    print("USERNAME DISPONIBILE")
+                    used = False
+        
+
+
 #
 #5-11. Ordinal Numbers: Ordinal numbers indicate their position in a list, such as 1st or 2nd. Most ordinal numbers end in th, except 1, 2, and 3.
 #• Store the numbers 1 through 9 in a list.
 #• Loop through the list.
-#• Use an if-elif-else chain inside the loop to print the proper ordinal ending for each number. Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th 9th", and each result should be on a separate line.
+#• Use an if-elif-else chain inside the loop to print the proper ordinal ending for each number. 
+#   Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th 9th", and each result should be on a separate line.
 #
+

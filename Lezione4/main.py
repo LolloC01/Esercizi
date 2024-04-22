@@ -36,3 +36,7 @@ while es != 0:
         citta: str = "Londra"
         paese: str = "Regno Unito"
         print(lezione4.city_country(citta,paese))
+    elif es == 8.7:
+        print(lezione4.make_album("Ultimo", "Peter Pan"))
+        print(lezione4.make_album("Pignuini Tattici Nucleari", "Scooby Doo"))
+        print(lezione4.make_album("Eminem", "Marshall Mother LP", 10))

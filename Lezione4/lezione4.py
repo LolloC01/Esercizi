@@ -48,7 +48,23 @@ def city_country(city: str, country: str) -> str:
     message: str = f"{city}, {country}"
     return message
 
-#8-7. Album: Write a function called make_album() that builds a dictionary describing a music album. The function should take in an artist name and an album title, and it should return a dictionary containing these two pieces of information. Use the function to make three dictionaries representing different albums. Print each return value to show that the  dictionaries are storing the album information correctly. Use None to add an optional parameter to make_album() that allows you to store the number of songs on an album. If the calling line includes a value for the number of songs, add that value to the album’s dictionary. Make at least one new function call that includes the number of songs on an album.
+#8-7. Album: Write a function called make_album() that builds a dictionary describing a music album. 
+#The function should take in an artist name and an album title, and it should return a dictionary containing these two pieces of information. 
+#Use the function to make three dictionaries representing different albums. 
+#Print each return value to show that the  dictionaries are storing the album information correctly. 
+#Use None to add an optional parameter to make_album() that allows you to store the number of songs on an album. 
+#If the calling line includes a value for the number of songs, add that value to the album’s dictionary. 
+#Make at least one new function call that includes the number of songs on an album.
+
+def make_album(artist: str, title: str, *args) -> dict:
+    album: dict = {"artist" : artist, "album" : title}
+    if len(args) != 0:
+        album["songs"] = args[0]
+    return album
+
+
+
+
 #8-8. User Albums: Start with your program from Exercise 8-7. Write a while loop that allows users to enter an album’s artist and title. Once you have that information, call make_album() with the user’s input and print the dictionary that’s created. Be sure to include a quit value in the while loop.
 #
 #8-9. Messages: Make a list containing a series of short text messages. Pass the list to a function called show_messages(), which prints each text message.

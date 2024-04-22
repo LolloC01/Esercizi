@@ -19,10 +19,21 @@ def fav_book(title: str) -> None:
 #
 
 def make_shirt(size: str, text: str) -> None:
-    message: str = f"SIze: {size}\nText: {text}"
+    message: str = f"Size: {size}\nText: {text}"
     print(message)
 
-#8-4. Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message that reads I love Python. Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
+#8-4. Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message that reads I love Python. 
+#                   Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
+
+def make_shirt_1(size: str, text: str) -> None:
+    message: str = f"Size: L\nText: I love Python"
+    print(message)
+    message: str = f"Size: M\nText: I love Python"
+    print(message)
+    message: str = f"Size: {size}\nText: {text}"
+    print(message)
+
+
 #8-5. Cities: Write a function called describe_city() that accepts the name of a city and its country. The function should print a simple sentence, such as Reykjavik is in Iceland. Give the parameter for the country a default value. Call your function for three different cities, at least one of which is not in the default country.
 #
 #8-6. City Names: Write a function called city_country() that takes in the name of a city and its country. The function should return a string formatted like this: "Santiago, Chile". Call your function with at least three city-country pairs, and print the values that are returned.

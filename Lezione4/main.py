@@ -16,4 +16,7 @@ while es != 0:
         testo: str = "DAJE ROMA DAJE"
         lezione4.make_shirt(taglia, testo)
         lezione4.make_shirt(size = taglia, text = testo)
-        
+    elif es == 8.4:
+        taglia: str = "XXL"
+        testo: str = "DAJE ROMA DAJE"
+        lezione4.make_shirt_1(taglia, testo)

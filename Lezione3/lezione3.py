@@ -283,7 +283,8 @@ while es != 0:
 #
 #5-7. Favorite Fruit: Make a list of your favorite fruits, and then write a series of independent if statements that check for certain fruits in your list.
 #• Make a list of your three favorite fruits and call it favorite_fruits.
-#• Write five if statements. Each should check whether a certain kind of fruit is in your list. If the fruit is in your list, the if block should print a statement, such as You really like Apples!
+#• Write five if statements. Each should check whether a certain kind of fruit is in your list. 
+#If the fruit is in your list, the if block should print a statement, such as You really like Apples!
 #
 #5-8. Hello Admin: Make a list of five or more usernames, including the name 'admin'. Imagine you are writing code that will print a greeting to each user 
 #after they log in to a website. Loop through the list, and print a greeting to each user.
@@ -308,7 +309,10 @@ while es != 0:
 
     elif es == 5.9:
         username: list = []
-        
+        x: int = int(input("Inserisci il numero di username: "))
+        for i in x:
+            y: str = input("Inserisci gli username: ")
+            username.append(y)  
         if len(username) == 0:
             print("We need to find some users!")
         else:

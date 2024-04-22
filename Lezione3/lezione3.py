@@ -378,3 +378,14 @@ while es != 0:
 #   Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th 9th", and each result should be on a separate line.
 #
 
+    elif es == 5.11:
+        numbers: list = [x for x in range(10)]
+        for x in numbers:
+            if x == 1:
+                print("1st")
+            elif x == 2:
+                print("2nd")
+            elif x == 3:
+                print("3rd")
+            else:
+                print(f"{x}th")

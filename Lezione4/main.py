@@ -41,8 +41,31 @@ while es != 0:
         print(lezione4.make_album("Pignuini Tattici Nucleari", "Scooby Doo"))
         print(lezione4.make_album("Eminem", "Marshall Mother LP", 10))
     elif es == 8.8:
-        artist: str = input("inserisci l'artista: ")
-        artist: str = input("inserisci l'album: ")
+        x: bool = True
+        dischi: list =[] 
+        while x:
+            artist: str = input("inserisci l'artista: ")
+            album: str = input("inserisci l'album: ")
+            dischi.append(lezione4.make_album(artist, album))
+            if input("Inserisci 0 per coninuare o 1 per finire: ") == "0":
+                continue
+            else:
+                break
+        print(dischi)
     elif es == 8.9:
         message: list =["ciao", "Hello","Hola"]
         lezione4.show_message(message) 
+    elif es == 8.101:
+        message: list =["ciao", "Hello","Hola"]
+        msg: list =[] 
+        msg = lezione4.send_message(message)
+        print(msg)
+    elif es == 8.11:
+        message: list =["ciao", "Hello","Hola"]
+        mess_1: list = message
+        msg: list =[] 
+        msg = lezione4.send_message(mess_1)
+        print(msg)
+        print(mess_1)
+        print(message)
+

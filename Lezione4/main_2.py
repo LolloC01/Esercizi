@@ -20,3 +20,24 @@ for s in students:
 
 
 '''es.game(es.rand(1,10),10)'''
+
+
+
+'''
+carrello: list = []
+while True:
+    print("Cosa vuoi fare? \
+          \n(1 per inserire un prodotto nel carrello)\
+          \n(2 per eliminare il prodotto)\
+          \n(3 per visualizzare il totale)\
+          \n(4 per visualizzare il carrello\
+          \n(0 per terminare)")
+    x: int = int(input())
+    if x == 0:
+        break
+    elif x == 3:
+        disc: float = float(input("inserisci la percentuale di sconto: "))
+        es.cart(carrello, x, disc)
+    else: 
+        es.cart(carrello, x)
+'''

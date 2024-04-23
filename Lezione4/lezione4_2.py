@@ -59,11 +59,43 @@ def game(guess: int, attempts: int) -> int:
      Implement a for loop to iterate over the items in the cart and print detailed 
      information about each product and the total.'''
 
+def product() -> dict:
+    nome: str = input("Inserisci il nome del prodotto: ")
+    prezzo: float = float(input("Inserisci il prezzo del prodotto: "))
+    quantita: int = int(input("Inserisci la quantità del prodotto: "))
+    prod: dict = {
+        "name" : nome,
+        "price" : prezzo,
+        "quantity" : quantita
+    }
+    return prod
 
-
-
-
-
+def cart(carrello: list, oper: int, discount: float = 0, taxes: float = 22) -> list:
+    if oper == 1:
+        prod: dict = product()
+        carrello.append(prod)
+    elif oper == 2:
+        for x in carrello:
+            print(x["name"])
+        eliminate: str = input("Inserisci il nome del prodotto da eliminare: ")
+        for x in carrello:
+            if eliminate == x["name"]:
+                carrello.remove(x)
+                print("PRODOTTO ELIMINATO")
+                break
+    elif oper == 3:
+        total: float = 0.00
+        for x in carrello:
+            total = total + x["price"]*x["quantity"]
+        print(f"Totale senza sconto e tasse: {total}")
+        sconto: float = total/100*taxes
+        total = total + sconto
+        if discount != 0:
+            total = total-(total/100*discount)
+        print(f"TOTALE: {total}")
+    else:
+        for x in carrello:
+            print(f'{x["name"]}\nquantità: {x["quantity"]}\ncosto: {x["quantity"]*x["price"]}')
 
 
 

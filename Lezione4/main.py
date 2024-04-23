@@ -69,7 +69,12 @@ while es != 0:
         print(mess_1)
         print(message)
     elif es == 8.12:
-        pass
+        panino_1: list = ["pane", "hamburger", "pomodoro", "formaggio fuso", "lattuga"]
+        lezione4.sandwich(panino_1)
+        panino_2: list = ["pane", "pollo", "pomodoro", "lattuga"]
+        lezione4.sandwich(panino_2)
+        panino_3: list = ["pane", "prosciutto crudo", "pomodori secchi", "burrata", "lattuga"]
+        lezione4.sandwich(panino_3)
     elif es == 8.13:
         first_name: str = "Lorenzo"
         last_name: str = "Colitto"

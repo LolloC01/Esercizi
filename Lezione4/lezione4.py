@@ -116,6 +116,7 @@ def build_profiler(first_name: str, last_name: str, age: int, weight: int, heigh
     return message
 
 
+<<<<<<< HEAD
 #8-14. Cars: Write a function that stores information about a car in a dictionary. The function should always receive a manufacturer and a model name. 
 #It should then accept an arbitrary number of keyword arguments. 
 #Call the function with the required information and two other name-value pairs, such as a color or an optional feature. 
@@ -135,6 +136,18 @@ def make_car(manufacturer: str, model: str, color: str = None, parking_sensor: b
 #Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
 #8-16. Imports: Using a program you wrote that has one function in it, store that function in a separate file. 
 #Import the function into your main program file, and call the function using each of these approaches:
+=======
+#8-14. Cars: Write a function that stores information about a car in a dictionary. The function should always receive a manufacturer and a model name. It should then accept an arbitrary number of keyword arguments. 
+#Call the function with the required information and two other name-value pairs, such as a color or an optional feature.########
+#Your function should work for a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True) Print the dictionary that’s returned to make sure all the information was stored correctly. 
+
+def store_car(manufacturer: str, model: str, color: str = "Nero", optional: str = "Sensori posteriori") -> dict:
+    car: dict = {"manufacturer" : manufacturer, "model" : model
+
+
+#8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called printing_functions.py. Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
+#8-16. Imports: Using a program you wrote that has one function in it, store that function in a separate file. Import the function into your main program file, and call the function using each of these approaches:
+>>>>>>> 52f355f (vecchio)
 #import module_name
 #from module_name import function_name
 #from module_name import function_name as fn

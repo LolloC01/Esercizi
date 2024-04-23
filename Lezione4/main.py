@@ -85,7 +85,8 @@ while es != 0:
         info = lezione4.build_profiler(first_name,last_name,age,weight,height)
         print(info)
     elif es == 8.14:
-        pass
+        car: dict = lezione4.make_car("Alfa Romeo", "Stelvio", "Rosso", True)
+        print(car) 
     elif es == 8.15:
         pass
     elif es == 8.16:

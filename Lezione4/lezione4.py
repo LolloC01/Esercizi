@@ -108,11 +108,19 @@ def send_message(message: list) -> list:
 
 def build_profiler(first_name: str, last_name: str, age: int, weight: int, height: int) -> str:
     message: str = f"{first_name}{last_name}, age:{age}, weight: {weight}, height:{height}"
-    print(message)
+    return message
 
 
-#8-14. Cars: Write a function that stores information about a car in a dictionary. The function should always receive a manufacturer and a model name. It should then accept an arbitrary number of keyword arguments. Call the function with the required information and two other name-value pairs, such as a color or an optional feature. Your function should work for a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True) Print the dictionary that’s returned to make sure all the information was stored correctly. 
+#8-14. Cars: Write a function that stores information about a car in a dictionary. The function should always receive a manufacturer and a model name. 
+#It should then accept an arbitrary number of keyword arguments. 
+#Call the function with the required information and two other name-value pairs, such as a color or an optional feature. 
+#Your function should work for a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True)
+# Print the dictionary that’s returned to make sure all the information was stored correctly. 
 #
+
+
+
+
 #8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called printing_functions.py. Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
 #8-16. Imports: Using a program you wrote that has one function in it, store that function in a separate file. Import the function into your main program file, and call the function using each of these approaches:
 #import module_name

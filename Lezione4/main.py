@@ -68,4 +68,22 @@ while es != 0:
         print(msg)
         print(mess_1)
         print(message)
-
+    elif es == 8.12:
+        pass
+    elif es == 8.13:
+        first_name: str = "Lorenzo"
+        last_name: str = "Colitto"
+        age: int = 23
+        weight: int = 90
+        height: int = 175
+        info: str
+        info = lezione4.build_profiler(first_name,last_name,age,weight,height)
+        print(info)
+    elif es == 8.14:
+        pass
+    elif es == 8.15:
+        pass
+    elif es == 8.16:
+        pass
+    elif es == 8.17:
+        pass

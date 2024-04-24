@@ -105,6 +105,7 @@ def cart(carrello: list, oper: int, discount: float = 0, taxes: float = 22) -> l
     The function should print a report showing the most frequent words and their number of occurrences.
     You can use a for loop to iterate over the words in the text and a dictionary to store the occurrences.
     Implement error handling to handle missing files or other input issues.'''
+<<<<<<< HEAD
 
 
 
@@ -112,6 +113,43 @@ def cart(carrello: list, oper: int, discount: float = 0, taxes: float = 22) -> l
 
 
 
+=======
+
+import os
+
+def analysis(file: str) -> dict:
+    text: list = [] 
+    word: dict = {}
+    if os.path.exists(file):
+        f = open(file, "r")
+    else: 
+        print("Il fiile non esiste")
+        return 0
+    for x in f:
+        x = x.split()
+        text.append(x)
+    f.close()
+    '''for x in text:
+        counter: int = 0
+        if x not in word:
+            for y in text:
+                if x == y:
+                    counter += 1
+        else: 
+            continue
+        word[x] = counter
+    return word'''
+    for x in text:
+        counter = 0
+        for y in text:
+            print(y)
+            if x == y:
+                counter += 1
+        print(f"{x}: {counter}")
+
+
+
+>>>>>>> 0a6d41c (esercizio 4)
 '''5. Inventory Management System:
 
      Create a function that defines an item with a code, name, quantity, and price.

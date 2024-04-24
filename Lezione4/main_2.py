@@ -41,3 +41,5 @@ while True:
     else: 
         es.cart(carrello, x)
 '''
+file: str = '/home/lorenzo/VScodeProjects/Esercizi/Lezione4/text.txt'
+es.analysis(file)

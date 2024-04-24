@@ -17,5 +17,5 @@ def fibonacci_ric(num: int, num_0: int = 0, num_1: int = 1) -> int:
     else:
         return x
     
-print(fibonacci(10))
-print(fibonacci_ric(10))
+print(fibonacci(10000))
+print(fibonacci_ric(1000))

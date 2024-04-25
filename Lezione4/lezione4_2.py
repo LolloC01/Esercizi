@@ -191,11 +191,21 @@ def search_item(item: str, inventory: list):
 
 '''6. Password Generator:
 
-    Create a function that generates a random password with a specified length and desired character types (lowercase letters, uppercase letters, numbers, symbols).
+    Create a function that generates a random password with a specified length and desired character types 
+    (lowercase letters, uppercase letters, numbers, symbols).
     Allow the user to specify the password length and desired character types.
-    Generate and return a random password that meets the user's criteria.
+    Generate and return a random password that meets the user's criteria.'''
 
-7. Roman Numeral Conversion:
+def password(lenght: int, char: list) -> str:
+    password: str = ""
+    while lenght > 0:
+        lenght -= 1
+        password += random.choice(char)
+    return password
+
+
+
+'''7. Roman Numeral Conversion:
 
     Create a function that converts a given integer to its Roman numeral representation.
     Handle numbers from 1 to 3999.

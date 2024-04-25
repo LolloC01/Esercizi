@@ -105,19 +105,11 @@ def cart(carrello: list, oper: int, discount: float = 0, taxes: float = 22) -> l
     The function should print a report showing the most frequent words and their number of occurrences.
     You can use a for loop to iterate over the words in the text and a dictionary to store the occurrences.
     Implement error handling to handle missing files or other input issues.'''
-<<<<<<< HEAD
 
-
-
-
-
-
-
-=======
 
 import os
 
-def analysis(file: str) -> dict:
+def analysis(file: str) -> None:
     text: list = [] 
     word: dict = {}
     if os.path.exists(file):
@@ -126,38 +118,63 @@ def analysis(file: str) -> dict:
         print("Il fiile non esiste")
         return 0
     for x in f:
+        x = x.lower().strip(",")
         x = x.split()
         text.append(x)
     f.close()
-    '''for x in text:
-        counter: int = 0
-        if x not in word:
-            for y in text:
-                if x == y:
-                    counter += 1
-        else: 
-            continue
-        word[x] = counter
-    return word'''
     for x in text:
-        counter = 0
-        for y in text:
-            print(y)
-            if x == y:
-                counter += 1
-        print(f"{x}: {counter}")
+        for y in x:
+            if y in word:
+                word[y] += 1
+            else:
+                word[y] = 1 
+    max_n: int = 0
+    max_w: str
+    for x in word:
+        if word[x] > max_n:
+            max_n = word[x]
+            max_w = x
+    print(f"Most used word:{max_w} --- repeated {max_n} times")
 
 
 
->>>>>>> 0a6d41c (esercizio 4)
 '''5. Inventory Management System:
 
      Create a function that defines an item with a code, name, quantity, and price.
      Create a database or dictionary to store the items in inventory.
     Implement functions to add, remove, search, and update items in the inventory.
     Use for loops and conditional statements to manage the various inventory operations.
+'''
+def item(code: str, name: str, quantity: int, price: float) -> dict:
+    item: dict ={"code" : code,
+                 "name" : name,
+                 "quantity" : quantity,
+                 "price" : price}
+    return item
 
-6. Password Generator:
+def add_item(item: dict, inventory: list):
+    for x in range(len(inventory)):
+        if inventory[x]["code"] == item["code"]:
+            print("item gia in inventario")
+            inventory[x]["quantity"] += item["quantity"]
+            break
+        else:
+            inventory.append(item)
+
+def remove_item(item: dict, inventory: list):
+    if item in inventory:
+        inventory.remove(item)
+    else:
+        print("ELEMENTO NON IN INVENTARIO")
+
+def update_items():
+    return
+
+def search_item():
+    return
+
+
+'''6. Password Generator:
 
     Create a function that generates a random password with a specified length and desired character types (lowercase letters, uppercase letters, numbers, symbols).
     Allow the user to specify the password length and desired character types.

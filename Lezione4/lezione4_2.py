@@ -153,25 +153,40 @@ def item(code: str, name: str, quantity: int, price: float) -> dict:
     return item
 
 def add_item(item: dict, inventory: list):
-    for x in range(len(inventory)):
-        if inventory[x]["code"] == item["code"]:
-            print("item gia in inventario")
-            inventory[x]["quantity"] += item["quantity"]
-            break
-        else:
-            inventory.append(item)
-
-def remove_item(item: dict, inventory: list):
-    if item in inventory:
-        inventory.remove(item)
+    if len(inventory) > 0:
+        for x in range(len(inventory)):
+            if inventory[x]["code"] == item["code"]:
+                print("item gia in inventario")
+                inventory[x]["quantity"] += item["quantity"]
+            else:
+                print("APPEND")
+                inventory.append(item)   
     else:
-        print("ELEMENTO NON IN INVENTARIO")
+        inventory.append(item)
+    print(inventory)
 
-def update_items():
+def show_inventory(inventory: list):
+    for x in inventory:
+        print(x)
+
+def remove_item(item: str, inventory: list):
+    for x in inventory:
+        if x["code"] == item or x["name"] == item:
+            inventory.remove(x)
+            print("ELEMENTO RIMOSSO")
+    
+def update_items(item: dict, inventory: list):
+    for x in range(len(inventory)):
+        if inventory[x]["code"] == item["code"] or inventory[x]["name"] == item["name"]:
+            inventory[x]["price"] = item["price"]
+            inventory[x]["quantity"] += item["quantity"]
+            print("ELEMENTO RIMOSSO")
     return
 
-def search_item():
-    return
+def search_item(item: str, inventory: list):
+    for x in inventory:
+        if x["code"] == item or x["name"] == item:
+            print(x)
 
 
 '''6. Password Generator:

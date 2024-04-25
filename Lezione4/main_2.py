@@ -79,15 +79,22 @@ while True:
         quantita: int = int(input("Inserisci la quantità dell'item: "))
         item: dict = es.item(codice,nome, quantita, prezzo)
         es.add_item(item, inventario)
-        print(inventario)
     elif x == 2:
-        pass
+        ogg: str = input("Inserisci l'item da eliminare: ")
+        es.remove_item(ogg, inventario)
     elif x == 3:
-        pass
+        es.show_inventory(inventario)
     elif x == 4:
-        pass
+        ogg: str = input("Inserisci l'item da ricercare: ")
+        es.search_item(ogg, inventario)
     elif x == 5:
-        pass
+        codice: str = input("Inserisci il codice dell'item: ")
+        nome: str = input("Inserisci il nome del'item': ")
+        prezzo: float = float(input("Inserisci il prezzo dell'item: "))
+        quantita: int = int(input("Inserisci la quantità dell'item: "))
+        item: dict = es.item(codice,nome, quantita, prezzo)
+        es.update_items(item, inventario)
+
 
 
 ############        ESERCIZIO 6
@@ -99,4 +106,4 @@ while True:
 ############        ESERCIZIO 12
 ############        ESERCIZIO 13
 ############        ESERCIZIO 14
-############        ESERCIZIO 15
+############        ESERCIZIO 151

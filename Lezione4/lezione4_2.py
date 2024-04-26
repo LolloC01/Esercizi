@@ -209,15 +209,93 @@ def password(lenght: int, char: list) -> str:
 
     Create a function that converts a given integer to its Roman numeral representation.
     Handle numbers from 1 to 3999.
-    Use a combination of string manipulation and conditional statements to build the Roman numeral.
+    Use a combination of string manipulation and conditional statements to build the Roman numeral.'''
 
-8. ATM Machine Simulator:
+    
+def roman_number(arab_num: int) -> str:
+    roman_num: str = ""
+    roman_alph: list = ["M", "D", "C", "L", "X", "V", "I"] 
+    letter: str = ""
+    num_l: list = forma_polin(arab_num)
+    for x in range(len(num_l)):
+        print(roman_num)
+        if x == 0:
+            print(f"migliaia -- {num_l[x]}")
+            if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
+                roman_num += ("M"*num_l[x])
+        elif x == 1:
+            print(f"centinaia -- {num_l[x]}")
+            if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
+                roman_num += ("C"*num_l[x])
+            elif num_l[x] == 4:
+                roman_num += ("CD")
+            elif num_l[x] == 5:
+                roman_num += ("D")
+            elif num_l[x] == 6:
+                roman_num += ("DC")
+            elif num_l[x] == 7:
+                roman_num += ("DCC")
+            elif num_l[x] == 8:
+                roman_num += ("DCCC")
+            elif num_l[x] == 9: 
+                roman_num += ("CM")
+        elif x == 2:
+            print(f"decine -- {num_l[x]}")
+            if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
+                roman_num += ("X"*num_l[x])
+            elif num_l[x] == 4:
+                roman_num += ("XL")
+            elif num_l[x] == 5:
+                roman_num += ("L")
+            elif num_l[x] == 6:
+                roman_num += ("LX")
+            elif num_l[x] == 7:
+                roman_num += ("LXX")
+            elif num_l[x] == 8:
+                roman_num += ("LXXX")
+            elif num_l[x] == 9: 
+                roman_num += ("XC")
+        elif x == 3:
+            print(f"unita -- {num_l[x]}")
+            if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
+                roman_num += ("I"*num_l[x])
+            elif num_l[x] == 4:
+                roman_num += ("IV")
+            elif num_l[x] == 5:
+                roman_num += ("V")
+            elif num_l[x] == 6:
+                roman_num += ("VI")
+            elif num_l[x] == 7:
+                roman_num += ("VII")
+            elif num_l[x] == 8:
+                roman_num += ("VIII")
+            elif num_l[x] == 9: 
+                roman_num += ("IX")
+
+        
+    print(num_l)
+    
+    return roman_num
+
+def forma_polin(arab_num: int) -> list:
+    num_s: str = str(arab_num)
+    num_l: list = [] 
+    for i in range(len(num_s)):
+        num_l.append(int(num_s[i] ))
+    while len(num_l) < 4:
+        num_l.insert(0,0)
+    return num_l
+
+
+'''8. ATM Machine Simulator:
 
     Create a function that simulates an ATM machine.
     Initialize an account with a starting balance.
     Allow the user to perform transactions such as deposit, withdraw, and check balance.
      Validate transactions against the account balance and available funds.
     Provide appropriate feedback to the user for each transaction.
+
+
 
 
 9. Caesar Cipher Encryption/Decryption
@@ -235,33 +313,55 @@ def password(lenght: int, char: list) -> str:
     Sort the characters of each string and compare the sorted strings for equality.
     Indicate whether the strings are anagrams or not.
 
-11. Word Search Puzzle Solver:
+11. Word Search Puzzle Solver:  --------       DIFFICILE
 
     Create a function that solves a word search puzzle.
     Provide a 2D grid representing the puzzle and a list of words to find.
     Implement a backtracking algorithm to search for the words in the grid, marking visited cells to avoid repetition.
-    Output the locations of the found words within the grid.
+    Output the locations of the found words within the grid.'''
 
 
-12. Sieve of Eratosthenes Prime Number Generator:
+'''12. Sieve of Eratosthenes Prime Number Generator:
 
     Create a function that generates a list of prime numbers up to a specified limit using the Sieve of Eratosthenes algorithm.
     Initialize an array of all numbers up to the limit, marking each number as prime initially.
     Iterate through the array, starting from 2, and mark every multiple of the current number as non-prime.
     The remaining unmarked numbers are the prime numbers within the limit.
-    Return the list of prime numbers.
+    Return the list of prime numbers.'''
 
 
-13. Fractal Tree Generator:
+
+def sieve_eratosthenes(num: int) -> list:
+    primi: list =[x for x in range(num)]
+    non_primi: list = []  
+    molt: int = 2
+    for x in range(2, len(primi)):
+        print(x)
+        molt = 2
+        if x not in non_primi:
+            n: int = molt*primi[x] 
+            print(f"{n}  ----  {x} ")
+            while n < primi[-1]:
+                n: int = molt*primi[x] 
+                if n not in non_primi:
+                    non_primi.append(n)
+                molt += 1
+    for x in non_primi:
+        if x <= primi[-1]: 
+            primi.remove(x)     
+    return primi
+
+
+'''13. Fractal Tree Generator:
 
     Create a function that generates a fractal tree using recursion.
     Specify the starting trunk length and branching angle.
     Draw the trunk and then recursively call the function to draw two branches at the specified angle, each with a shorter length.
-    Repeat the branching process until a desired level of detail is reached.
+    Repeat the branching process until a desired level of detail is reached.'''
 
 
 
-14. Sudoku Solver:
+'''14. Sudoku Solver:
 
     Create a function that solves a Sudoku puzzle using backtracking.
     Provide a 9x9 grid representing the puzzle with some numbers filled in and others left blank.

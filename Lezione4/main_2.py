@@ -101,37 +101,53 @@ while True:
 
 import string
 
-
-alfabeto_minuscolo = string.ascii_lowercase
-alfabeto_maiuscolo = string.ascii_uppercase
-numeri = string.digits
-speciali = string.punctuation
-caratteri = alfabeto_minuscolo + alfabeto_maiuscolo + numeri + speciali
-print(caratteri)
-print("Sceglli i caratteri da usare nella password")
-char: str = input("Caratteri alfabeto minuscoli?  Y/N: ")
-if  char == "n" or char == "N":
-    caratteri = caratteri.replace(alfabeto_minuscolo,"")
-char = input("Caratteri alfabeto maiuscoli?  Y/N: ")
-if char == "n" or char == "N":
-    caratteri = caratteri.replace(alfabeto_maiuscolo,"")
-char = input("Numeri?  Y/N: ")
-if char == "n" or char == "N":
-    caratteri = caratteri.replace(numeri,"")
-char = input("Caratteri speciali?  Y/N: ")
-if char == "n" or char == "N":
-    caratteri = caratteri.replace(speciali,"")
-lenght: int = int(input("Inserisci la lunghezza della password: "))
-print(es.password(lenght, caratteri))
-
+'''
+    alfabeto_minuscolo = string.ascii_lowercase
+    alfabeto_maiuscolo = string.ascii_uppercase
+    numeri = string.digits
+    speciali = string.punctuation
+    caratteri = alfabeto_minuscolo + alfabeto_maiuscolo + numeri + speciali
+    print(caratteri)
+    print("Sceglli i caratteri da usare nella password")
+    char: str = input("Caratteri alfabeto minuscoli?  Y/N: ")
+    if  char == "n" or char == "N":
+        caratteri = caratteri.replace(alfabeto_minuscolo,"")
+    char = input("Caratteri alfabeto maiuscoli?  Y/N: ")
+    if char == "n" or char == "N":
+        caratteri = caratteri.replace(alfabeto_maiuscolo,"")
+    char = input("Numeri?  Y/N: ")
+    if char == "n" or char == "N":
+        caratteri = caratteri.replace(numeri,"")
+    char = input("Caratteri speciali?  Y/N: ")
+    if char == "n" or char == "N":
+        caratteri = caratteri.replace(speciali,"")
+    lenght: int = int(input("Inserisci la lunghezza della password: "))
+    print(es.password(lenght, caratteri))
+'''
 
 
 ############        ESERCIZIO 7
+
+
+print(es.roman_number(853))
+
+
+
 ############        ESERCIZIO 8
+
+
+
+
+
 ############        ESERCIZIO 9
 ############        ESERCIZIO 10
 ############        ESERCIZIO 11
 ############        ESERCIZIO 12
+
+numeri_primi: int = 10000
+print(es.sieve_eratosthenes(numeri_primi))
+
+
 ############        ESERCIZIO 13
 ############        ESERCIZIO 14
-############        ESERCIZIO 151
+############        ESERCIZIO 15

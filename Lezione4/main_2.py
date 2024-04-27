@@ -140,14 +140,27 @@ print(es.roman_number(853))
 
 
 ############        ESERCIZIO 9
+
+print(es.caesar_cipher("CIAO SONO LORENZO", 15, "crypt"))
+
 ############        ESERCIZIO 10
 ############        ESERCIZIO 11
 ############        ESERCIZIO 12
 
-numeri_primi: int = 10000
+numeri_primi: int = 10
 print(es.sieve_eratosthenes(numeri_primi))
 
 
 ############        ESERCIZIO 13
+
+
+
+
+# es.prova()
+import turtle
+
+    
+  # es.fractal_tree(10,45,100)
+
 ############        ESERCIZIO 14
 ############        ESERCIZIO 15

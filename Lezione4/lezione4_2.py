@@ -218,13 +218,12 @@ def roman_number(arab_num: int) -> str:
     letter: str = ""
     num_l: list = forma_polin(arab_num)
     for x in range(len(num_l)):
-        print(roman_num)
         if x == 0:
-            print(f"migliaia -- {num_l[x]}")
+             # print(f"migliaia -- {num_l[x]}")
             if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
                 roman_num += ("M"*num_l[x])
         elif x == 1:
-            print(f"centinaia -- {num_l[x]}")
+              # print(f"centinaia -- {num_l[x]}")
             if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
                 roman_num += ("C"*num_l[x])
             elif num_l[x] == 4:
@@ -240,7 +239,7 @@ def roman_number(arab_num: int) -> str:
             elif num_l[x] == 9: 
                 roman_num += ("CM")
         elif x == 2:
-            print(f"decine -- {num_l[x]}")
+              # print(f"decine -- {num_l[x]}")
             if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
                 roman_num += ("X"*num_l[x])
             elif num_l[x] == 4:
@@ -256,7 +255,7 @@ def roman_number(arab_num: int) -> str:
             elif num_l[x] == 9: 
                 roman_num += ("XC")
         elif x == 3:
-            print(f"unita -- {num_l[x]}")
+             # print(f"unita -- {num_l[x]}")
             if num_l[x] == 1 or num_l[x] == 2 or num_l[x] == 3:
                 roman_num += ("I"*num_l[x])
             elif num_l[x] == 4:
@@ -273,7 +272,7 @@ def roman_number(arab_num: int) -> str:
                 roman_num += ("IX")
 
         
-    print(num_l)
+ #     print(num_l)
     
     return roman_num
 
@@ -303,10 +302,40 @@ def forma_polin(arab_num: int) -> list:
     Create functions for encrypting and decrypting a message using the Caesar cipher.
     Allow the user to specify the shift value (number of positions to shift each letter).
      Handle both encryption and decryption using the same function with appropriate adjustments.
-    Encrypt and decrypt the given message using the specified shift value.
+    Encrypt and decrypt the given message using the specified shift value.'''
+import string
+
+def caesar_cipher(message: str, shift: int, oper: str) -> str:
+    alfabeto_minuscolo = string.ascii_lowercase
+    alfabeto_maiuscolo = string.ascii_uppercase
+    numeri = string.digits
+    speciali = string.punctuation
+    alphabet: str =  alfabeto_maiuscolo + numeri + speciali
+    crypted: dict = {}
+    final_message: str = ""
+    index: int = 0 
+    for x in range(len(alphabet)):
+        if (x+shift) < len(alphabet):
+            crypted[alphabet[x]] = alphabet[x+shift] 
+        else:
+            crypted[alphabet[x]] =  alphabet[index]
+            index += 1
+    for s in message:
+        if s == " ":
+            final_message = final_message + " "
+            continue
+        for x, y in crypted.items():
+            if oper == "crypt":
+                if s == x:
+                    final_message = final_message + y
+            else:
+                if s == y:
+                    final_message = final_message + x
+    return final_message
+    
 
 
-10. Anagram Checker:
+'''10. Anagram Checker:
 
     Create a function that checks whether two given strings are anagrams of each other.
     Convert both strings to lowercase and remove any non-alphabetic characters.
@@ -358,8 +387,40 @@ def sieve_eratosthenes(num: int) -> list:
     Specify the starting trunk length and branching angle.
     Draw the trunk and then recursively call the function to draw two branches at the specified angle, each with a shorter length.
     Repeat the branching process until a desired level of detail is reached.'''
+import turtle
 
+'''def fractal_tree(length: int, angle: int, long: int, length_s: int) -> None:
+    if length > 0:
+        tree_dx(length,angle,long)
+        fractal_tree(length-1,angle, long-5, length_s)
+    else: 
+        fractal_tree(length+1,angle,long+5,length_s)
+        tree_sx(length,angle,long)
 
+def tree_dx_back(length: int, angle: int, long: int) -> None:
+    turtle.backward(long)
+
+def tree_sx(length: int, angle: int, long: int) -> None:
+    turtle.left(angle)
+    turtle.pendown()
+    turtle.forward(long)
+    turtle.penup()    '''
+def tree_dx(length: int, angle: int, long: int) -> None:
+    turtle.right(angle)
+    turtle.pendown()
+    turtle.forward(long)
+    turtle.penup()
+
+def fractal_tree(long: int, angle: int, line: int, pos: int = 0) -> None:
+    if pos == 0:
+        turtle.showturtle()
+        turtle.left(90)
+        turtle.forward(line)
+    elif pos == long:
+        pos = 0
+    else:
+        tree_dx(long,angle,line)
+    fractal_tree(long,angle,line-5,pos+1)
 
 '''14. Sudoku Solver:
 

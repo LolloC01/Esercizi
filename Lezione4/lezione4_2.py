@@ -292,12 +292,38 @@ def forma_polin(arab_num: int) -> list:
     Initialize an account with a starting balance.
     Allow the user to perform transactions such as deposit, withdraw, and check balance.
      Validate transactions against the account balance and available funds.
-    Provide appropriate feedback to the user for each transaction.
+    Provide appropriate feedback to the user for each transaction.'''
+
+def atm(account: dict):
+    while True:    
+        print("Select operation: \
+          \n(1 to deposit)\
+          \n(2 to withdraw)\
+          \n(3 to check Balance)\
+          \n(0 to terminate)")
+        operation: int = int(input("Inserisci l'operazione da eseguire: "))
+        if operation == 1:
+            deposit: float = int(input("Inserisci la cifra da depositare: "))
+            account["Balance"] += deposit
+            x = account["Balance"]
+            print(f"New Balance: {x}")
+        elif operation == 2: 
+            print(account["Balance"])
+            withdraw: int = int(input("inserici la cifra da prelevare: "))
+            if withdraw > account["Balance"]:
+                print("CIFRA NON DISPONIBILE")
+            else:
+                print(f"Prelevati: {withdraw}")
+                account["Balance"] -= withdraw
+                x = account["Balance"]
+                print(f"New Balance: {x}")     
+        elif operation == 3:
+            print(account)
+        else:
+            return
 
 
-
-
-9. Caesar Cipher Encryption/Decryption
+'''9. Caesar Cipher Encryption/Decryption
 
     Create functions for encrypting and decrypting a message using the Caesar cipher.
     Allow the user to specify the shift value (number of positions to shift each letter).
@@ -310,7 +336,7 @@ def caesar_cipher(message: str, shift: int, oper: str) -> str:
     alfabeto_maiuscolo = string.ascii_uppercase
     numeri = string.digits
     speciali = string.punctuation
-    alphabet: str =  alfabeto_maiuscolo + numeri + speciali
+    alphabet: str =  alfabeto_maiuscolo + alfabeto_minuscolo + numeri + speciali
     crypted: dict = {}
     final_message: str = ""
     index: int = 0 
@@ -340,9 +366,30 @@ def caesar_cipher(message: str, shift: int, oper: str) -> str:
     Create a function that checks whether two given strings are anagrams of each other.
     Convert both strings to lowercase and remove any non-alphabetic characters.
     Sort the characters of each string and compare the sorted strings for equality.
-    Indicate whether the strings are anagrams or not.
+    Indicate whether the strings are anagrams or not.'''
+import string
 
-11. Word Search Puzzle Solver:  --------       DIFFICILE
+def anagram(string_1: str, string_2: str) -> bool:
+    remove: str = string.punctuation + string.digits
+    storage: list = [] 
+    for x in range(len(string_2)):
+        print(string_2[x] )
+        s: str = string_2[x].lower()
+        if s not in remove:
+            storage.append(s)
+    print(storage)
+    for x in string_1.lower().lstrip(remove):
+        print(f"{x}   -----    {storage} ")
+        if x in storage:
+            storage.remove(x)
+        
+    if len(storage) > 0:
+        return False
+    return True
+
+
+
+'''11. Word Search Puzzle Solver:  --------       DIFFICILE
 
     Create a function that solves a word search puzzle.
     Provide a 2D grid representing the puzzle and a list of words to find.
@@ -426,7 +473,8 @@ def fractal_tree(long: int, angle: int, line: int, pos: int = 0) -> None:
 
     Create a function that solves a Sudoku puzzle using backtracking.
     Provide a 9x9 grid representing the puzzle with some numbers filled in and others left blank.
-    Implement a backtracking algorithm to check for valid placements in empty cells, ensuring no row, column, or 3x3 subgrid contains duplicates.
+    Implement a backtracking algorithm to check for valid placements in empty cells,
+    ensuring no row, column, or 3x3 subgrid contains duplicates.
     Solve the puzzle by filling in the remaining empty cells with valid numbers.
 
 15. Text Editor with Basic Functionality:

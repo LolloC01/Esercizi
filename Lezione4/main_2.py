@@ -135,15 +135,25 @@ print(es.roman_number(853))
 
 ############        ESERCIZIO 8
 
+account: dict = {"Card" : 98104735,
+                 "Name" : "Lorenzo",
+                 "Surname" : "Colitto",
+                 "Balance" : 387.89}
+es.atm(account)
 
 
 
 
 ############        ESERCIZIO 9
 
-print(es.caesar_cipher("CIAO SONO LORENZO", 15, "crypt"))
+print(es.caesar_cipher("Cartine carenti recanti cernita incerta ", 15, "crypt"))
 
 ############        ESERCIZIO 10
+
+
+print(es.anagram("Incerta", "cretina"))
+
+
 ############        ESERCIZIO 11
 ############        ESERCIZIO 12
 

@@ -436,39 +436,28 @@ def sieve_eratosthenes(num: int) -> list:
     Repeat the branching process until a desired level of detail is reached.'''
 import turtle
 
-'''def fractal_tree(length: int, angle: int, long: int, length_s: int) -> None:
-    if length > 0:
-        tree_dx(length,angle,long)
-        fractal_tree(length-1,angle, long-5, length_s)
-    else: 
-        fractal_tree(length+1,angle,long+5,length_s)
-        tree_sx(length,angle,long)
 
-def tree_dx_back(length: int, angle: int, long: int) -> None:
-    turtle.backward(long)
-
-def tree_sx(length: int, angle: int, long: int) -> None:
+def tree_sx(angle: int, long: int) -> None:
     turtle.left(angle)
     turtle.pendown()
     turtle.forward(long)
-    turtle.penup()    '''
-def tree_dx(length: int, angle: int, long: int) -> None:
+    turtle.penup()    
+def tree_dx(angle: int, long: int) -> None:
     turtle.right(angle)
     turtle.pendown()
     turtle.forward(long)
     turtle.penup()
 
-def fractal_tree(long: int, angle: int, line: int, pos: int = 0) -> None:
-    if pos == 0:
-        turtle.showturtle()
-        turtle.left(90)
-        turtle.forward(line)
-    elif pos == long:
-        pos = 0
-    else:
-        tree_dx(long,angle,line)
-    fractal_tree(long,angle,line-5,pos+1)
-
+def fractal_tree(t: turtle, lenght: int, angle: int) -> None:
+    if lenght <= 5:
+        return
+    t.forward(lenght)
+    t.right(angle)
+    fractal_tree(t, lenght-50, angle)
+    t.left(angle*2)
+    fractal_tree(t, lenght-50,angle)
+    t.right(angle)
+    t.backward(lenght)
 '''14. Sudoku Solver:
 
     Create a function that solves a Sudoku puzzle using backtracking.

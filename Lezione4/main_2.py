@@ -155,6 +155,10 @@ print(es.anagram("Incerta", "cretina"))
 
 
 ############        ESERCIZIO 11
+
+
+
+
 ############        ESERCIZIO 12
 
 numeri_primi: int = 10
@@ -169,8 +173,17 @@ print(es.sieve_eratosthenes(numeri_primi))
 # es.prova()
 import turtle
 
+t = turtle.Turtle()
+t.speed(0)
+t.left(90)
     
-  # es.fractal_tree(10,45,100)
-
+es.fractal_tree(t, 100, 20)
+turtle.mainloop()
 ############        ESERCIZIO 14
+
+
+
 ############        ESERCIZIO 15
+
+
+

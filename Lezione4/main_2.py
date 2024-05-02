@@ -169,7 +169,6 @@ print(es.sieve_eratosthenes(numeri_primi))
 
 
 
-
 # es.prova()
 import turtle
 
@@ -177,7 +176,7 @@ t = turtle.Turtle()
 t.speed(0)
 t.left(90)
     
-es.fractal_tree(t, 100, 20)
+es.fractal_tree(t, 50, 10, 100)
 turtle.mainloop()
 ############        ESERCIZIO 14
 

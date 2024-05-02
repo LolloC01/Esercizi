@@ -18,7 +18,6 @@ def average_score(student: str, vote: list) -> None:
         print(f"Studente {student}, media: {media}, BOCCIATO")
     
     
-    
 '''2. Guess the Number Game:
 
     Create a function that generates a random number within a range specified by the user.
@@ -437,27 +436,17 @@ def sieve_eratosthenes(num: int) -> list:
 import turtle
 
 
-def tree_sx(angle: int, long: int) -> None:
-    turtle.left(angle)
-    turtle.pendown()
-    turtle.forward(long)
-    turtle.penup()    
-def tree_dx(angle: int, long: int) -> None:
-    turtle.right(angle)
-    turtle.pendown()
-    turtle.forward(long)
-    turtle.penup()
-
-def fractal_tree(t: turtle, lenght: int, angle: int) -> None:
-    if lenght <= 5:
+def fractal_tree(t: turtle, lenght: int, angle: int, line: int) -> None:
+    if lenght <= 3:
         return
-    t.forward(lenght)
+    t.forward(line)
     t.right(angle)
-    fractal_tree(t, lenght-50, angle)
+    fractal_tree(t, lenght-5, angle, line-5)
     t.left(angle*2)
-    fractal_tree(t, lenght-50,angle)
+    fractal_tree(t, lenght-5, angle, line-5)
     t.right(angle)
-    t.backward(lenght)
+    t.backward(line)
+
 '''14. Sudoku Solver:
 
     Create a function that solves a Sudoku puzzle using backtracking.

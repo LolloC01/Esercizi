@@ -71,7 +71,18 @@ Make occupation, location, and age optional parameters. Use this function to cre
 
 Example: build_profile("John", "Doe", occupation="Developer", location="USA", age=30)'''
 
+def build_profile(name: str, surname: str, occupation: str = None, location: str = None, age: int = None):
+    person: dict = {
+        "name" : name,
+        "surname" : surname,
+        "occupation" : occupation,
+        "location" : location,
+        "age" : age
+    }
+    return person
 
+
+print(build_profile("John", "Doe", occupation="Developer", location="USA", age=30))
 
 
 

@@ -99,6 +99,35 @@ Write a function called modify_event() that accepts a dictionary, an event name,
 
 Example: modify_event(dictionary, "Code Workshop", ["Alice", "Bob", "Charlie"], ”4pm”)'''
 
+
+def plan_event(name_event: str, list_partecipants: list, time: str):
+    planner: dict = {
+        "event" : name_event,
+        "partecipants" : list_partecipants,
+        "hour" : time
+    }
+    return planner
+event1 = plan_event("Code Workshop", ["Alice", "Bob", "Charlie"],"4pm")
+event2 = plan_event("writing Workshop", ["Angela", "Bill", "Chiara"],"3pm")
+event3 = plan_event("HTML Workshop", ["Anna", "Ben", "Carmelo"],"3pm")
+planner = {
+    "E1" : event1,
+    "E2" : event2,
+    "E3" : event3,
+}
+print(planner)
+
+def modify_event(planner: dict, event_name: str, new_part: list, new_time: str):
+    for x in planner.values():
+        if x["event"] == event_name:
+            x["partecipants"] = new_part
+            x["hour"] = new_time
+            break
+
+modify_event(planner, "HTML Workshop", ["Alice", "Bob", "Charlie"], "5pm")
+
+print(planner)
+
 '''5. Shopping List:
 
 Write a function called create_shopping_list() that accepts a store name and any number of items as arguments. It should return a dictionary with the store name and a set of items to buy there. Test the function with different stores and item lists.

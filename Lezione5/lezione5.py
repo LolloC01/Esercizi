@@ -128,12 +128,33 @@ modify_event(planner, "HTML Workshop", ["Alice", "Bob", "Charlie"], "5pm")
 
 print(planner)
 
+print("\n\n")
+
 '''5. Shopping List:
 
-Write a function called create_shopping_list() that accepts a store name and any number of items as arguments. It should return a dictionary with the store name and a set of items to buy there. Test the function with different stores and item lists.
+Write a function called create_shopping_list() that accepts a store name and any number of items as arguments. 
+It should return a dictionary with the store name and a set of items to buy there. Test the function with different stores and item lists.
 
 Example: create_shopping_list("Grocery Store", {"Milk", "Eggs", "Bread"})
 
 Write a function called print_shopping_list() that accepts a dictionary and a store name, then prints each item from that store's shopping list.
 
 Example: print_shopping_list(dictionary, "Grocery Store")'''
+
+def create_shopping_list(store: str, products: set):
+    shopping_list = {
+        "store name" : store,
+        "products" : products
+    }
+    return shopping_list
+
+shop = create_shopping_list("Grocery Store", {"Milk", "Eggs", "Bread"})
+print(shop)
+
+def print_shopping_list(store: dict, store_name: str):
+    for x in store.values():
+        print(x)
+        if x == store_name:
+            print(x["products"])
+
+print_shopping_list(shop, "Grocecry Store")

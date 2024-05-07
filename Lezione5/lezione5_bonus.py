@@ -65,7 +65,7 @@ def sort_two_list(list1: list, list2: list):
 
     return list1
 
-print(sort_two_list([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8]))
+print(([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8]))
 
 '''8. Find the Most Frequent Element:
 
@@ -78,3 +78,13 @@ Implement a function to find the second largest element in an unsorted list with
 '''10. Find the Intersection of Two Sorted Arrays:
 
 Implement a function to find the elements that are present in both of the two sorted lists'''
+
+def intersections(num: list, num1: list):
+    ris = []
+    for x in num:
+        if x in num1:
+            ris.append(x)
+
+    return ris
+
+print(intersections([1,23,4,5,7,8,9],[2,3,4,5,6,7,8]))

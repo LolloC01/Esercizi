@@ -47,30 +47,45 @@ Develop a function to check if a given number is an Armstrong number (the sum of
 Implement a function to merge two sorted lists into a single sorted list.'''
 def sort_two_list(list1: list, list2: list):
     merge = list1.copy()
-    x = 0
-    """for x in range(len(merge)):
-        for y in range(len(list2)):
-            if list2[y] < merge[x]:
-                merge.insert(x,list2[y])
-            else:
-                continue"""
-    print(merge)
     for y in list2:
-        if list1[x] < y:
-            merge.insert(x,y)
-            print(merge)
-        else:
-            x += 1
+        x = 0
+        while x < len(merge):
+            print("////////////")
+            print(x)
+            print(list2[x])
+            print(y)
+            print("////////////")
+            if y <= list2[x]:
+                merge.insert(x,y)
+                print(f"{x}-----{y}----{merge}")
+                break
+            else:
+                x += 1
 
 
-    return list1
+    return merge
 
-print(([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8]))
+print(sort_two_list([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8]))
 
 '''8. Find the Most Frequent Element:
 
 Create a function that finds the element that appears most frequently in a given list.'''
 
+def most_frequent(num: list) -> int:
+    n: int = 0
+    c: int = 0
+    c1: int = 0
+    for x in num:
+        if x not in num:
+            continue
+        for y in num:
+            if x == y:
+                c+=1
+        if c > c1:
+            c1 = c
+            n = x
+        elif c < c1:
+            break
 '''9. Find the Second Largest Element in an Array:
 
 Implement a function to find the second largest element in an unsorted list without using sorting algorithms.'''

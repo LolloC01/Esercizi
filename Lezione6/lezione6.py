@@ -48,7 +48,7 @@ class Person:
         """
         raise Exception("you cannot modify the surname!")
 
-    def get_snn(self) -> str:
+    def get_ssn(self) -> str:
         """
         This function return a person's ssn
         input: None
@@ -56,7 +56,7 @@ class Person:
         """
         return self._ssn
 
-    def set_snn(self, new_snn: str) -> None:
+    def set_ssn(self, new_snn: str) -> None:
         """
         This function set the ssn
         input: new_snn: str
@@ -64,12 +64,10 @@ class Person:
         """
         raise Exception("you cannot modify the ssn number!")
 
-
-    def check_ssn(self, ssn: str) -> bool:
-        return True
     def compute_ssn(self) -> str:
         con = "BCDFGHJKLMNPQRSTVWXYZ"
         ssn: str = ""
+        #CALCOLO COGNOME
         if len(self._surname) > 3:
             st = self._surname
             cons = ""
@@ -91,7 +89,7 @@ class Person:
             ssn += self._surname
             while len(ssn) < 3:
                 ssn += "X"
-        
+        #CALCOLO NOME
         if len(self._name) > 3:
             st = self._name
             cons = ""
@@ -113,28 +111,32 @@ class Person:
             ssn += self._name
             while len(ssn) < 6:
                 ssn += "X"
-        
+        #ANNO DI NASCITA
         ssn += self._birth_date[-2:]
+        #MESE DI NASCITA
         ssn += mese[self._birth_date[3:5]]
+        #GIORNO DI NASCITA
         if self._gender == "M":
             ssn += self._birth_date[:2]
         else:
             x = int(self._birth_date[:2])+40
             ssn += str(x)
+        #PROVINCIA
         ssn += codici_catastali_capoluoghi[self._bitrh_place.upper()]
+        #CALCOLO LETTERA FINALE
         n = n1 = 0
         ssn = ssn.upper()
         for x in range(len(ssn)):
             if x % 2 == 0:
-                print(f"{ssn[x]}--------numero dispari")
-                print(f"{caratteri_alfanumerici_dispar[ssn[x]]}----dispari")
+                #print(f"{ssn[x]}--------numero dispari")
+                #print(f"{caratteri_alfanumerici_dispar[ssn[x]]}----dispari")
                 n += caratteri_alfanumerici_dispar[ssn[x]]
             else:
-                print(f"{ssn[x]}--------numero pari")
-                print(f"{caratteri_alfanumerici_pari[ssn[x]]}----pari")
+                #print(f"{ssn[x]}--------numero pari")
+                #print(f"{caratteri_alfanumerici_pari[ssn[x]]}----pari")
                 n += caratteri_alfanumerici_pari[ssn[x]]
         n1 = n % 26
-        print(f"{n1}----resto di {n}----{resto_lettera[n1]}")
+        #print(f"{n1}----resto di {n}----{resto_lettera[n1]}")
         ssn += resto_lettera[n1]
         return ssn
 

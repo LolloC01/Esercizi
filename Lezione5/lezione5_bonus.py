@@ -29,13 +29,20 @@ An LCS is a subsequence of one string that is also a subsequence of the other st
 
 '''4. Word Break Problem: 
 
-Given a string and a dictionary of words, determine whether the string can be segmented into a space-separated sequence of one or more dictionary words. 
+Given a string and a dictionary of words, 
+determine whether the string can be segmented into a space-separated sequence of one or more dictionary words. 
 Each word in the dictionary must be a contiguous substring of the input string.'''
 
+def word_break_problem(word: dict, text: str) -> bool:
+    for x in text:
+        if x not in word:
+            return False
+    return True
 
 '''5. Longest Palindrome Subsequence:
 
-A palindrome is a word, phrase, or sequence that reads the same backwards as forward. Given a string, the task is to find the longest palindrome subsequence within the string. 
+A palindrome is a word, phrase, or sequence that reads the same backwards as forward. 
+Given a string, the task is to find the longest palindrome subsequence within the string. 
 A subsequence is obtained from a string by deleting zero or more elements without changing the order of the remaining elements.'''
 
 '''6. Armstrong Number Checker:

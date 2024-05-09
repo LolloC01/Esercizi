@@ -65,6 +65,11 @@ class Person:
         raise Exception("you cannot modify the ssn number!")
 
     def compute_ssn(self) -> str:
+        """calcola il codnice fiscale
+
+        Returns:
+            str: codice fiscale
+        """
         con = "BCDFGHJKLMNPQRSTVWXYZ"
         ssn: str = ""
         #CALCOLO COGNOME
@@ -143,6 +148,14 @@ class Person:
 
 import csv
 def get_cod_catastale(file: str) -> dict:
+    """associa per ogni comune il relativo codice catastale
+
+    Args:
+        file (str): file.csv con tutti i comuni italiani e le residenze estere
+
+    Returns:
+        dict: chiave: nome_comune   valore: codice_catastale
+    """
     cod_cat: dict = {}
     fields: list = []
     rows: list = []

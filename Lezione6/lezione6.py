@@ -5,8 +5,8 @@ class Person:
     def __init__(self, name: str, surname: str, birth_date: str, bitrh_place: str, gender: str) -> None:
         """
         This function inizialize an object of Person with
-        input: name: str, surname: str, ssn: str
-        return: self._name: str
+        input: name: str, surname: str, birth_date: str, bitrh_place: str, gender: str (M o F)
+        return: None
         """
         self._name: str = name
         self._surname: str = surname
@@ -68,7 +68,7 @@ class Person:
     def check_ssn(self, ssn: str) -> bool:
         return True
     def compute_ssn(self) -> str:
-        con = "BCDFGHJKLMNPQRSTUVWXYZ"
+        con = "BCDFGHJKLMNPQRSTVWXYZ"
         ssn: str = ""
         if len(self._surname) > 3:
             st = self._surname
@@ -86,11 +86,12 @@ class Person:
                 while len(cons) < 3:
                     cons += voc[x]
                     x += 1
+            ssn += cons
         else:
             ssn += self._surname
             while len(ssn) < 3:
                 ssn += "X"
-        ssn += cons
+        
         if len(self._name) > 3:
             st = self._name
             cons = ""
@@ -107,34 +108,59 @@ class Person:
                 while len(cons) < 3:
                     cons += voc[x]
                     x += 1
+            ssn += cons
         else:
             ssn += self._name
             while len(ssn) < 6:
                 ssn += "X"
-        ssn += cons
+        
+        ssn += self._birth_date[-2:]
+        ssn += mese[self._birth_date[3:5]]
         if self._gender == "M":
             ssn += self._birth_date[:2]
         else:
             x = int(self._birth_date[:2])+40
             ssn += str(x)
-        ssn += mese[self._birth_date[3:5]]
-        ssn += self._birth_date[-2:]
-        ssn += codici_catastali_capoluoghi[self._bitrh_place.capitalize()]
-        pari_n = dispari_n = 0
-        print(ssn)
+        ssn += codici_catastali_capoluoghi[self._bitrh_place.upper()]
+        n = n1 = 0
+        ssn = ssn.upper()
         for x in range(len(ssn)):
-            print(ssn[x])
-            print(f"{pari_n}---somma")
             if x % 2 == 0:
-                print(f"{caratteri_alfanumerici_pari[ssn[x]]}----pari")
-                pari_n += caratteri_alfanumerici_pari[ssn[x]]
-            else:
+                print(f"{ssn[x]}--------numero dispari")
                 print(f"{caratteri_alfanumerici_dispar[ssn[x]]}----dispari")
-                pari_n += caratteri_alfanumerici_dispar[ssn[x]]
-        pari_n = pari_n % 26
-        print(pari_n)
-        ssn += resto_lettera[pari_n]
+                n += caratteri_alfanumerici_dispar[ssn[x]]
+            else:
+                print(f"{ssn[x]}--------numero pari")
+                print(f"{caratteri_alfanumerici_pari[ssn[x]]}----pari")
+                n += caratteri_alfanumerici_pari[ssn[x]]
+        n1 = n % 26
+        print(f"{n1}----resto di {n}----{resto_lettera[n1]}")
+        ssn += resto_lettera[n1]
         return ssn
+
+
+import csv
+def get_cod_catastale(file: str) -> dict:
+    cod_cat: dict = {}
+    fields: list = []
+    rows: list = []
+    # reading csv file
+    with open(file, 'r') as csvfile:
+    # creating a csv reader object
+        csvreader = csv.reader(csvfile)
+ 
+    # extracting field names through first row
+        fields = next(csvreader)
+        
+    # extracting each data row one by one
+        for row in csvreader:
+            rows.append(row[0].split(";"))
+    for x in rows:
+        x[1] = x[1].strip('"')
+        x[2] = x[2].strip('"')
+        cod_cat[x[1]] = x[2]
+
+    return cod_cat
 
 mese: dict = {
     "01" : "A",
@@ -226,120 +252,7 @@ caratteri_alfanumerici_dispar = {
     'Y': 24,
     'Z': 23
 }
-codici_catastali_capoluoghi = {
-    "Agrigento": "A091",
-    "Alessandria": "A182",
-    "Ancona": "A282",
-    "Aosta": "A326",
-    "L'Aquila": "A345",
-    "Arezzo": "A390",
-    "Ascoli Piceno": "A462",
-    "Asti": "A479",
-    "Avellino": "A509",
-    "Bari": "A662",
-    "Barletta": "B693",
-    "Andria": "A285",
-    "Trani": "L331",
-    "Belluno": "A757",
-    "Benevento": "A783",
-    "Bergamo": "A794",
-    "Biella": "A861",
-    "Bologna": "A944",
-    "Bolzano": "A952",
-    "Brescia": "B157",
-    "Brindisi": "B180",
-    "Cagliari": "B354",
-    "Caltanissetta": "B426",
-    "Campobasso": "B519",
-    "Carbonia": "B743",
-    "Iglesias": "E281",
-    "Caserta": "B963",
-    "Catania": "C351",
-    "Catanzaro": "C351",
-    "Chieti": "C632",
-    "Como": "C933",
-    "Cosenza": "D086",
-    "Cremona": "D150",
-    "Crotone": "D189",
-    "Cuneo": "D205",
-    "Enna": "D406",
-    "Fermo": "D540",
-    "Ferrara": "D548",
-    "Firenze": "D612",
-    "Foggia": "D643",
-    "Forlì": "D704",
-    "Cesena": "C573",
-    "Frosinone": "D813",
-    "Genova": "D969",
-    "Gorizia": "E101",
-    "Grosseto": "E199",
-    "Imperia": "E293",
-    "Isernia": "E338",
-    "La Spezia": "E463",
-    "Latina": "E472",
-    "Lecce": "E506",
-    "Lecco": "E509",
-    "Livorno": "E625",
-    "Lodi": "E644",
-    "Lucca": "E717",
-    "Macerata": "E783",
-    "Mantova": "E899",
-    "Massa": "F023",
-    "Matera": "F052",
-    "Messina": "F158",
-    "Milano": "F205",
-    "Modena": "F207",
-    "Monza": "F704",
-    "Napoli": "F839",
-    "Novara": "F952",
-    "Nuoro": "F979",
-    "Oristano": "G113",
-    "Padova": "G224",
-    "Palermo": "G273",
-    "Parma": "G337",
-    "Pavia": "G388",
-    "Perugia": "G478",
-    "Pesaro": "G479",
-    "Urbino": "G507",
-    "Pescara": "G488",
-    "Piacenza": "G563",
-    "Pisa": "G702",
-    "Pistoia": "G722",
-    "Pordenone": "G888",
-    "Potenza": "G942",
-    "Prato": "G999",
-    "Ragusa": "H161",
-    "Ravenna": "H199",
-    "Reggio Calabria": "H224",
-    "Reggio Emilia": "H223",
-    "Rieti": "H282",
-    "Rimini": "H294",
-    "Roma": "H501",
-    "Rovigo": "H620",
-    "Salerno": "H703",
-    "Sassari": "H724",
-    "Savona": "H730",
-    "Siena": "G741",
-    "Siracusa": "I754",
-    "Sondrio": "I829",
-    "Taranto": "L057",
-    "Teramo": "L107",
-    "Terni": "L121",
-    "Torino": "L219",
-    "Trapani": "L331",
-    "Trento": "L378",
-    "Treviso": "L398",
-    "Trieste": "L424",
-    "Udine": "L483",
-    "Varese": "L682",
-    "Venezia": "L736",
-    "Verbania": "L741",
-    "Vercelli": "L749",
-    "Verona": "L781",
-    "Vibo Valentia": "L840",
-    "Vicenza": "L840",
-    "Viterbo": "M082"
-}
+codici_catastali_capoluoghi = get_cod_catastale("/home/user/VScodeProjects/Esercizi/Lezione6/gi_comuni_nazioni_cf.csv")
 resto_lettera = {
     0: 'A',
     1: 'B',
@@ -368,3 +281,6 @@ resto_lettera = {
     24: 'Y',
     25: 'Z'
 }
+
+
+           

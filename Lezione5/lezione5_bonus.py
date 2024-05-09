@@ -46,26 +46,18 @@ Develop a function to check if a given number is an Armstrong number (the sum of
 
 Implement a function to merge two sorted lists into a single sorted list.'''
 def sort_two_list(list1: list, list2: list):
-    merge = list1.copy()
     for y in list2:
         x = 0
-        while x < len(merge):
-            print("////////////")
-            print(x)
-            print(list2[x])
-            print(y)
-            print("////////////")
-            if y <= list2[x]:
-                merge.insert(x,y)
-                print(f"{x}-----{y}----{merge}")
-                break
-            else:
+        while x < len(list1):
+            if y > list1[x]:
                 x += 1
+            else:
+                list1.insert(x,y)
+                break
+    return list1
 
 
-    return merge
-
-print(sort_two_list([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,7,8]))
+print(sort_two_list([1,2,3,4,5,6,7,8,9],[2,3,4,5,6,6,6,6,6,6,7,8]))
 
 '''8. Find the Most Frequent Element:
 
@@ -76,19 +68,31 @@ def most_frequent(num: list) -> int:
     c: int = 0
     c1: int = 0
     for x in num:
-        if x not in num:
-            continue
-        for y in num:
-            if x == y:
-                c+=1
+        c = num.count(x)
         if c > c1:
             c1 = c
             n = x
-        elif c < c1:
-            break
+    return n
+
+print(most_frequent([1,2,3,4,5,6,7,8,9,2,3,4,5,6,6,6,6,6,6,7,8]))
 '''9. Find the Second Largest Element in an Array:
 
 Implement a function to find the second largest element in an unsorted list without using sorting algorithms.'''
+
+def second_largest(num: list ) -> int:
+    primo: int = 0
+    secondo: int = 0
+    for x in num:
+        if x > primo:
+            secondo = 0
+            primo = x
+        elif x > secondo:
+            secondo = x
+        else:
+            continue
+    return secondo
+
+print(second_largest([1,2,3,4,5,6,7,8,9,2,3,4,5,6,6,6,6,6,6,7,8]))
 
 '''10. Find the Intersection of Two Sorted Arrays:
 

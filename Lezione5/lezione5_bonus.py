@@ -40,7 +40,21 @@ A subsequence is obtained from a string by deleting zero or more elements withou
 
 '''6. Armstrong Number Checker:
 
-Develop a function to check if a given number is an Armstrong number (the sum of its digits raised to the power of the number of digits equals the number itself).'''
+Develop a function to check if a given number is an Armstrong number 
+(the sum of its digits raised to the power of the number of digits equals the number itself).'''
+def armstrong_num(n: int) -> bool:
+    n = str(n)
+    pw: int = len(n)
+    s: int = 0
+    for x in n:
+        s += int(x)**pw
+    if s == int(n):
+        return True
+    return False
+
+print(armstrong_num(1634))
+
+
 
 '''7. Merge Two Sorted Lists: 
 

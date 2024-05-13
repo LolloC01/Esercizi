@@ -27,6 +27,31 @@ An increasing subsequence is a sequence of elements from the array where each el
 Given two strings, find the length of the longest common subsequence (LCS) between them. 
 An LCS is a subsequence of one string that is also a subsequence of the other string while maintaining the relative order of elements.'''
 
+def lcs(s1: str, s2: str) -> str:
+    count = 0
+    x1 = y1 = c = c1 = 0
+    if s2 in s1:
+        return len(s2)
+    else:
+        print(type(x1))
+        print(type(y1))
+        for y in s2:
+            for x in s1:
+                if y == x:
+                    count += 1
+                    break
+                if count > c:
+                    c = count
+                    count = 0
+    return c
+
+s2 = ["rumbaip"]
+l1 = ["rumecoca"]
+
+print(lcs(l1,s2))
+
+
+
 '''4. Word Break Problem: 
 
 Given a string and a dictionary of words, 

@@ -30,8 +30,8 @@ print("#"*50)
 print("#"*50)
 print("#"*50)
 
-from classi import User
-from classi import Admin
+from user import User
+from user import Admin
 
 Lorenzo: User = User("Lorenzo", "Colitto", 23, "M", 3933140037)
 Luce: Admin = Admin("Luce", "Rossi", 2, "F", 39331543437, ["can delete post", "can add post", "can make comments", "can ban user"])
@@ -52,8 +52,19 @@ Lorenzo.describe_user()
 
 Luce.describe_user()
 Luce.greet_user()
-Luce.show_privileges()
+Luce.priv.show_privileges()
 print("")
 
 Ana.describe_user()
 Ana.greet_user()
+
+
+from car import Car
+
+tesla = Car("S", 10, 45)
+
+print(tesla.get_range())
+
+tesla.battery.upgrade_battery()
+
+print(tesla.get_range())

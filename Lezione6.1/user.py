@@ -43,8 +43,20 @@ class User:
 
 class Admin (User):
 
-    def __init__(self, name: str, surname: str, age: int, gender: int, phone: int, privileges: list = []) -> None:
+    def __init__(self, name: str, surname: str, age: int, gender: int, phone: int, privs) -> None:
         super().__init__(name, surname, age, gender, phone)
+        self.priv = Privileges(privs)
+
+    
+
+#9-8. Privileges: Write a separate Privileges class. 
+#The class should have one attribute, privileges, that stores a list of strings as described in Exercise 9-7. 
+#Move the show_privileges() method to this class. Make a Privileges instance as an attribute in the Admin class. 
+#Create a new instance of Admin and use your method to show its privileges.
+
+class Privileges:
+
+    def __init__(self, privileges: list = []) -> None:
         self.privileges: list = privileges
 
     def show_privileges(self) -> None:
@@ -52,12 +64,7 @@ class Admin (User):
         for x in self.privileges:
             print(x, end = "\t")
 
-#9-8. Privileges: Write a separate Privileges class. 
-#The class should have one attribute, privileges, that stores a list of strings as described in Exercise 9-7. 
-#Move the show_privileges() method to this class. Make a Privileges instance as an attribute in the Admin class. 
-#Create a new instance of Admin and use your method to show its privileges.
 
-#9-9. Battery Upgrade: Use the final version of electric_car.py from this section. Add a method to the Battery class called upgrade_battery(). This method should check the battery size and set the capacity to 65 if it isn’t already. Make an electric car with a default battery size, call get_range() once, and then call get_range() a second time after upgrading the battery. You should see an increase in the car’s range.
 
 #9-10. Imported Restaurant: Using your latest Restaurant class, store it in a module. Make a separate file that imports Restaurant. Make a Restaurant instance, and call one of Restaurant’s methods to show that the import statement is working properly.
 #9-11. Imported Admin: Start with your work from Exercise 9-8. Store the classes User, Privileges, and Admin in one module. Create a separate file, make an Admin instance, and call show_privileges() to show that everything is working correctly.

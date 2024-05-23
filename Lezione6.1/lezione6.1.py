@@ -31,7 +31,7 @@ print("#"*50)
 print("#"*50)
 
 from user import User
-from user import Admin
+from admin import Admin
 
 Lorenzo: User = User("Lorenzo", "Colitto", 23, "M", 3933140037)
 Luce: Admin = Admin("Luce", "Rossi", 2, "F", 39331543437, ["can delete post", "can add post", "can make comments", "can ban user"])
@@ -68,3 +68,21 @@ print(tesla.get_range())
 tesla.battery.upgrade_battery()
 
 print(tesla.get_range())
+
+
+
+from dice import Dice
+
+six = Dice(6)
+ten = Dice(10)
+twenty = Dice(20)
+
+print(six.roll_dice())
+print(ten.roll_dice())
+print(twenty.roll_dice())
+
+from dice import Lottery
+
+sisal = Lottery()
+
+sisal.winners()

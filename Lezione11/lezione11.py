@@ -45,6 +45,8 @@ lux.cinema_view()
 - Un cliente sceglie un film e prenota un certo numero di posti.
 '''
 print(lux.prenota_film("Top Gun", 23))
+print(lux.prenota_film("Top Gun", 50))
+
 lux.cinema_view()
 """
 - Il sistema verifica la disponibilità e conferma o rifiuta la prenotazione."""

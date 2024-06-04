@@ -64,13 +64,13 @@ class Book:
 
     def __str__(self) -> str:
         return f"title: {self.title}\nauthor: {self.author}\nisbn: {self.isbn}"
-    
-    @classmethod 
+
+    @classmethod
     def from_string(cls, book_str: str):
         l: list = book_str.split(sep=", ")
         new_book = Book(l[0],l[1],l[2])
         return new_book
-    
+
 
 
 class Member:
@@ -90,12 +90,12 @@ class Member:
     def __str__(self):
         return f"name: {self.name}\nid: {self.member_id}"
 
-    @classmethod 
+    @classmethod
     def from_string(cls, member_str):
         l: list = member_str.split(sep=", ")
         new_member = Member(l[0],l[1])
         return new_member
-    
+
 
 class Library:
     total_books = 0
@@ -120,9 +120,18 @@ class Library:
     def lend_book(self, book, member):
         if member not in self.members:
             raise ValueError("Membro non registrato")
-        if book not in self.books:
+        elif book not in member.borrowed_books:
+            raise ValueError("Libro non preso in prestito dal membro")
+        elif book not in self.books:
             raise ValueError("Libro non presente")
-        
-    __str__ method to return a string representation of the library with the list of books and members.
+        else:
+            for x in self.members:
+                if member == x:
+                    x.return_book(book)
 
-    @classmethod library_statistics(cls) to print the total number of books.
+    def __str__(self):
+        return f"libri: {self.books}\n membri: {self.members}"
+
+    @classmethod
+    def library_statistics(self, cls):
+        return len(self.books)

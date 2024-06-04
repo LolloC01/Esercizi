@@ -163,10 +163,10 @@ def get_cod_catastale(file: str) -> dict:
     with open(file, 'r') as csvfile:
     # creating a csv reader object
         csvreader = csv.reader(csvfile)
- 
+
     # extracting field names through first row
         fields = next(csvreader)
-        
+
     # extracting each data row one by one
         for row in csvreader:
             rows.append(row[0].split(";"))
@@ -267,7 +267,7 @@ caratteri_alfanumerici_dispar = {
     'Y': 24,
     'Z': 23
 }
-codici_catastali_capoluoghi = get_cod_catastale("/home/user/VScodeProjects/Esercizi/Lezione6/gi_comuni_nazioni_cf.csv")
+codici_catastali_capoluoghi = get_cod_catastale("C:\Users\lorya\VScodeProjects\Esercizi\Lezione6\gi_comuni_nazioni_cf.csv")
 resto_lettera = {
     0: 'A',
     1: 'B',
@@ -297,5 +297,4 @@ resto_lettera = {
     25: 'Z'
 }
 
-
-           
+print(codici_catastali_capoluoghi)

@@ -37,7 +37,7 @@ class Rettangolo(Forma):
     def render(self):
         for x in range(self.altezza):
             if x == 0 or x == self.altezza-1:
-                print("*"*self.base)
+                print("* "*self.base)
             else:
                 print("*"+" "*(self.base-2)+"*")
 
@@ -57,7 +57,7 @@ class Triangolo(Forma):
                 if y == x or y == 0:
                     ll+="*"
                 elif x == self.altezza-1:
-                    ll="*"*(self.base)
+                    ll="* "*(self.base)
                     break
                 else:
                     ll+=" "
@@ -65,3 +65,5 @@ class Triangolo(Forma):
 
 
 
+x = Triangolo(12,8)
+x.render()

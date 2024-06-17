@@ -77,7 +77,7 @@ except IOError as e:
 
 '''Database of dates:  Write a class that manages a database of dates with the format gg.mm.aaaa 
 implementing methods to add a new date, delete a given date, modify a date, and perform a query on a given date is required.  
-A query on a given date allows for retrieving a given new date. 
+A query on a given date allows for retrieving a given new date.
 Note that a date is an object for your database; it must be instantiated from a string.'''
 
 import datetime
@@ -119,23 +119,39 @@ Split user input using str.split(), and check whether the resulting list is vali
     If the input is valid, perform the calculation and print out the result. 
         The user is then prompted to provide new input, and so on, until the user enters quit.'''
 
+class FormulaError(Exception):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
+
 class Calculator:
     def __init__(self) -> None:
-        pass 
+        pass
 
     @staticmethod
     def operation(operation: str) -> float:
         op = operation.split(sep = " ")
-        if op[1] == "+":
-            return int(op[0])+int(op[2])
-        elif op[1] == "-":
-            return int(op[0])-int(op[2])
-        elif op[1] == "*":
-            return int(op[0])*int(op[2])
-        elif op[1] == "/":
-            if int(op[2]) == 0:
-                raise ZeroDivisionError
-            return int(op[0])/int(op[2])
+        try:
+            if len(op) != 3:
+                raise FormulaError
+            try:
+                val1 = float(op[0])
+                val2 = float(op[2])
+            except ValueError:
+                raise FormulaError("Valori inseriti non numerici")
+            if op[1] == "+":
+                return val1 + val2
+            elif op[1] == "-":
+                return val1-val2
+            else:
+                raise FormulaError("operatore non valido")
+        except FormulaError:
+            raise FormulaError("Operazione non formulata correttamente")
+
+while True:
+    op = input("Inserire l'operazione da effettuare o quit per uscire:\n")
+    if op == "quit":
+        break
+    print(Calculator.operation(op))
 
 
-print(Calculator.operation("10 / 0"))

@@ -155,3 +155,45 @@ while True:
     print(Calculator.operation(op))
 
 
+'''Custom Exception for Data Structure Integrity: Define a custom exception class DataStructureIntegrityError.  
+Define the custom data structure linked list use classes with methods to append, remove and access a given element, 
+and write functions that operate on that (i.e., print the list,  reverse the list, and check whether the list is ordered).
+Raise this exception if the data structure's integrity is compromised (e.g., empty list access, index error).'''
+
+class DataStructureIntegrityError(Exception):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
+class Nodo:
+    def __init__(self, data) -> None:
+        self.x: int = data
+        self.next = None
+    
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+
+        current_node = self.head
+        while(current_node.next):
+            current_node = current_node.next
+
+        current_node.next = new_node
+
+    def remove_node(self, data):
+        current_node = self.head
+
+        # Check if the head node contains the specified data
+        if current_node.data == data:
+            self.remove_first_node()
+            return
+
+        while current_node is not None and current_node.next.data != data:
+            current_node = current_node.next
+
+        if current_node is None:
+            return
+        else:
+            current_node.next = current_node.next.next
+
